@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 namespace OTU.Core {
-    public class NumberOfRolls : MonoBehaviour
+    public class GameManager : MonoBehaviour
     {
-        public int maxTurnsAllowed = 30;
+        [SerializeField] private int maxTurnsAllowed = 30;
 
         public bool GameOver(int turnsRolled) {
             if (turnsRolled > maxTurnsAllowed) {
@@ -15,6 +16,10 @@ namespace OTU.Core {
 
         public void ReduceTurns(int reduce) {
             maxTurnsAllowed -= reduce;
+        }
+
+        public int GetMaxTurns() {
+            return maxTurnsAllowed;
         }
     }
 }

@@ -1,28 +1,27 @@
 using UnityEngine;
 using OTU.Core;
+using OTU.UI;
 
 namespace OTU.Movement {
 public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] private GameObject gameManager;
+        [SerializeField] GameManager gameManager;
+        [SerializeField] private DieRoller dieRoller;
 
         private int spacesToMove = 0;
         private int turnsRolled = 0;
         private bool shouldMove = false;
 
         private void Update() {
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                RollDie();
-            }
             if (shouldMove) {
                 MovePlayer();
             }
         }
 
-        private void RollDie() {
-            spacesToMove = Random.Range(1, 7);
+        public void RollDie(int rolledSpaces) {
+            spacesToMove = rolledSpaces;
             turnsRolled++;
-            bool isOver = gameManager.GetComponent<NumberOfRolls>().GameOver(turnsRolled);
+            bool isOver = gameManager.GetComponent<GameManager>().GameOver(turnsRolled);
 
             if (isOver) return;
             shouldMove = true;
@@ -50,6 +49,10 @@ public class PlayerMovement : MonoBehaviour
                 transform.Translate(moveRight);
                 shouldMove = false;
             }            
+        }
+
+        public int GetTurnsRolled() {
+            return turnsRolled;
         }
     }
 }

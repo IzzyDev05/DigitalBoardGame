@@ -1,7 +1,7 @@
 using UnityEngine;
 using OTU.Core;
 
-namespace RPG.Items {
+namespace OTU.Items {
     public class GetItems : MonoBehaviour 
     {
         [SerializeField] GameObject gameManager;
@@ -18,10 +18,11 @@ namespace RPG.Items {
             int chanceRolled = Random.Range(0, 100);
 
             if (chanceRolled < chanceOfGettingItems) {
-                gameManager.GetComponent<NumberOfRolls>().ReduceTurns(loseTurns);
+                print("You got an item!");
             }
             else {
-                print("Great, you found 3 items!");
+                gameManager.GetComponent<GameManager>().ReduceTurns(loseTurns);
+                print($"Lost {loseTurns} turns");
             }
         }
     }
