@@ -8,6 +8,7 @@ namespace OTU.Managers {
         [SerializeField] GameObject player3 = null;
         [SerializeField] GameObject player4 = null;
     
+        private GameObject activePlayerObject;
         private int activePlayer = 1;
 
         private void Start() {
@@ -15,6 +16,8 @@ namespace OTU.Managers {
             ReturnPlayerMovement(player2).enabled = false;
             ReturnPlayerMovement(player3).enabled = false;
             ReturnPlayerMovement(player4).enabled = false;
+
+            activePlayerObject = player1;
         }
 
         private void Update() {
@@ -38,18 +41,22 @@ namespace OTU.Managers {
             if (player.playerNumber == PlayerHandler.PlayerNumber.player1) {
                 DisablePlayer(player1, player2, player3, player4);
                 activePlayer = 1;
+                activePlayerObject = player1;
             }
             if (player.playerNumber == PlayerHandler.PlayerNumber.player2) {
                 DisablePlayer(player2, player1, player3, player4);
                 activePlayer = 2;
+                activePlayerObject = player2;
             }
             if (player.playerNumber == PlayerHandler.PlayerNumber.player3) {
                 DisablePlayer(player3, player1, player2, player4);
                 activePlayer = 3;
+                activePlayerObject = player3;
             }
             if (player.playerNumber == PlayerHandler.PlayerNumber.player4) {
                 DisablePlayer(player4, player1, player2, player3);
                 activePlayer = 4;
+                activePlayerObject = player4;
             }
         }
 
@@ -66,6 +73,10 @@ namespace OTU.Managers {
 
         public int GetActivePlayerNumber() {
             return activePlayer;
+        }
+
+        public string GetActivePlayerName() {
+            return activePlayerObject.name;
         }
     }
 }

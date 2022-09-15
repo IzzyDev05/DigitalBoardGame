@@ -4,9 +4,19 @@ using OTU.Core;
 namespace OTU.Items {
     public class GetItems : MonoBehaviour 
     {
-        [SerializeField] GameObject gameManager;
+        [SerializeField] private GameObject gameManager;
         [Range(0,100)][SerializeField] private int chanceOfGettingItems = 50;
+        [SerializeField] private int itemsToGive;
         [SerializeField] private int loseTurns = 2;
+        [SerializeField] private GameObject itemsGainedPrompt;
+        [SerializeField] private GameObject livesLostPrompt;
+
+        private int itemsRecieved = 0;
+
+        private void Start() {
+            itemsGainedPrompt.SetActive(false);
+            livesLostPrompt.SetActive(false);
+        }
 
         private void OnTriggerEnter2D(Collider2D other) {
             if (other.CompareTag("Player")) {
@@ -18,12 +28,22 @@ namespace OTU.Items {
             int chanceRolled = Random.Range(0, 100);
 
             if (chanceRolled < chanceOfGettingItems) {
-                print("You got an item!");
+                itemsGainedPrompt.SetActive(true);
+                itemsRecieved += itemsToGive;
             }
             else {
                 gameManager.GetComponent<GameManager>().ReduceTurns(loseTurns);
-                print($"Lost {loseTurns} turns");
+                livesLostPrompt.SetActive(true);
             }
+        }
+
+        private void OnTriggerExit2D(Collider2D other) {
+            itemsGainedPrompt.SetActive(false);
+            livesLostPrompt.SetActive(false);
+        }
+
+        public int GetTotalItems() {
+            return itemsRecieved;
         }
     }
 }

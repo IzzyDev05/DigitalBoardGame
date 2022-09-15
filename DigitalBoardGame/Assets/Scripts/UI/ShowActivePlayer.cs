@@ -8,7 +8,7 @@ namespace OTU.UI {
         [SerializeField] TextMeshProUGUI activePlayerNumber;
 
         private void Update() {
-            activePlayerNumber.text = gameManager.GetActivePlayerNumber().ToString();
+            activePlayerNumber.text = gameManager.GetActivePlayerName();
         }
     }
 }

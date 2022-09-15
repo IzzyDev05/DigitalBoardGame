@@ -22,10 +22,16 @@ namespace OTU.UI {
             turnsRolled = players[0].GetTurnsRolled();
 
             int turnsLeft = gameManager.GetMaxTurns() - turnsRolled;
+            if (turnsLeft <= 0) {
+                turnsLeft = 0;
+            }
             rollsLeft.text = turnsLeft.ToString();
         }
 
         public void RollDie() {
+            bool isOver = gameManager.GetComponent<GameManager>().GameOver(turnsRolled);
+            if (isOver) return;
+
             spacesToMove = Random.Range(1, 7);
             rolledNumber.text = spacesToMove.ToString();
 
