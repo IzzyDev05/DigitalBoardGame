@@ -1,4 +1,6 @@
 using UnityEngine;
+using OTU.Movement;
+using OTU.Core;
 
 namespace OTU.Managers {
     public class InitializePlayers : MonoBehaviour {

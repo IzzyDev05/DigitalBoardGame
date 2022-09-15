@@ -6,9 +6,11 @@ namespace OTU.Core {
         [SerializeField] private int maxTurnsAllowed = 30;
         [SerializeField] private GameObject inGameUI;
         [SerializeField] private GameObject gameWonScreen;
+        [SerializeField] private GameObject gameLostScreen;
 
         private void Start() {
             gameWonScreen.SetActive(false);
+            gameLostScreen.SetActive(false);
         }
 
         public void GameWon() {
@@ -18,7 +20,8 @@ namespace OTU.Core {
 
         public bool GameOver(int turnsRolled) {
             if (turnsRolled > maxTurnsAllowed) {
-                print("Game over!");
+                inGameUI.SetActive(false);
+                gameLostScreen.SetActive(true);
                 return true;
             }
             return false;
