@@ -5,7 +5,7 @@ using OTU.UI;
 namespace OTU.Movement {
 public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] GameManager gameManager;
+        [SerializeField] private GameManager gameManager;
         [SerializeField] private DieRoller dieRoller;
 
         private int spacesToMove = 0;

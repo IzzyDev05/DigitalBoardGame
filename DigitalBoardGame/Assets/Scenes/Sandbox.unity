@@ -5050,7 +5050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326a79eac7de83047a7cd2525e83afa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTurnsAllowed: 100
+  maxTurnsAllowed: 5
   inGameUI: {fileID: 1592474831}
   gameWonScreen: {fileID: 1499022159}
   gameLostScreen: {fileID: 983652677}
