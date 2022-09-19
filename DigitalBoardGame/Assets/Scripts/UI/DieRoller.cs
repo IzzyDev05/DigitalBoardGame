@@ -2,24 +2,27 @@ using UnityEngine;
 using TMPro;
 using OTU.Core;
 using OTU.Movement;
+using OTU.Managers;
 
 namespace OTU.UI {
     public class DieRoller : MonoBehaviour
     {
-        [SerializeField] TextMeshProUGUI rolledNumber;
-        [SerializeField] TextMeshProUGUI rollsLeft;
-        [SerializeField] GameManager gameManager;
-        [SerializeField] PlayerMovement[] players;
-
+        [SerializeField] private PlayerMovement[] players;
+        [SerializeField] private GameManager gameManager;
+        [SerializeField] private TextMeshProUGUI rolledNumber;
+        [SerializeField] private TextMeshProUGUI rollsLeft;
+        
+        
         private int spacesToMove;
         private int turnsRolled;
 
         private void Start() {
+            players = FindObjectsOfType<PlayerMovement>();
             rollsLeft.text = gameManager.GetMaxTurns().ToString();
         }
         
         private void Update() {
-            turnsRolled = players[0].GetTurnsRolled();
+            turnsRolled = gameManager.GetTurnsRolled();
 
             int turnsLeft = gameManager.GetMaxTurns() - turnsRolled;
             if (turnsLeft <= 0) {
@@ -29,14 +32,16 @@ namespace OTU.UI {
         }
 
         public void RollDie() {
-            bool isOver = gameManager.GetComponent<GameManager>().GameOver(turnsRolled);
+            bool isOver = gameManager.GetComponent<GameManager>().GameOver();
             if (isOver) return;
 
             spacesToMove = Random.Range(1, 7);
             rolledNumber.text = spacesToMove.ToString();
 
             foreach(PlayerMovement player in players) {
-                player.RollDie(spacesToMove);
+                if (player.name == gameManager.GetComponent<SwitchPlayers>().GetActivePlayerName()) {
+                    player.RollDie(spacesToMove);
+                }
             }
         }
 

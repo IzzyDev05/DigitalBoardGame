@@ -10,5 +10,18 @@ namespace OTU.Managers {
         }
 
         public PlayerNumber playerNumber;
+        private int totalItems = 0;
+
+        public void AddItem(int numberOfItems) {
+            totalItems += numberOfItems;
+        }
+
+        public void RemoveItems() {
+            totalItems = 0;
+        }
+
+        public int GetTotalItems() {
+            return totalItems;
+        }
     }
 }

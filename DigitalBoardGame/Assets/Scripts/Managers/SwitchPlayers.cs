@@ -3,21 +3,16 @@ using OTU.Movement;
 
 namespace OTU.Managers {
     public class SwitchPlayers : MonoBehaviour {
-        [SerializeField] GameObject player1 = null;
-        [SerializeField] GameObject player2 = null;
-        [SerializeField] GameObject player3 = null;
-        [SerializeField] GameObject player4 = null;
-    
+        [SerializeField] private GameObject[] players;
         private GameObject activePlayerObject;
-        private int activePlayer = 1;
 
         private void Start() {
-            ReturnPlayerMovement(player1).enabled = true;
-            ReturnPlayerMovement(player2).enabled = false;
-            ReturnPlayerMovement(player3).enabled = false;
-            ReturnPlayerMovement(player4).enabled = false;
+            ReturnPlayerMovement(players[0]).enabled = true;
+            ReturnPlayerMovement(players[1]).enabled = false;
+            ReturnPlayerMovement(players[2]).enabled = false;
+            ReturnPlayerMovement(players[3]).enabled = false;
 
-            activePlayerObject = player1;
+            activePlayerObject = players[0];
         }
 
         private void Update() {
@@ -39,28 +34,24 @@ namespace OTU.Managers {
             PlayerHandler player = hit.collider.GetComponent<PlayerHandler>();
 
             if (player.playerNumber == PlayerHandler.PlayerNumber.player1) {
-                DisablePlayer(player1, player2, player3, player4);
-                activePlayer = 1;
-                activePlayerObject = player1;
+                SetPlayers(players[0], players[1], players[2], players[3]);
+                activePlayerObject = players[0];
             }
             if (player.playerNumber == PlayerHandler.PlayerNumber.player2) {
-                DisablePlayer(player2, player1, player3, player4);
-                activePlayer = 2;
-                activePlayerObject = player2;
+                SetPlayers(players[1], players[0], players[2], players[3]);
+                activePlayerObject = players[1];
             }
             if (player.playerNumber == PlayerHandler.PlayerNumber.player3) {
-                DisablePlayer(player3, player1, player2, player4);
-                activePlayer = 3;
-                activePlayerObject = player3;
+                SetPlayers(players[2], players[0], players[1], players[3]);
+                activePlayerObject = players[2];
             }
             if (player.playerNumber == PlayerHandler.PlayerNumber.player4) {
-                DisablePlayer(player4, player1, player2, player3);
-                activePlayer = 4;
-                activePlayerObject = player4;
+                SetPlayers(players[3], players[0], players[1], players[2]);
+                activePlayerObject = players[3];
             }
         }
 
-        private void DisablePlayer(GameObject toEnable, GameObject disable1, GameObject disable2, GameObject disable3) {
+        private void SetPlayers(GameObject toEnable, GameObject disable1, GameObject disable2, GameObject disable3) {
             ReturnPlayerMovement(toEnable).enabled = true;
             ReturnPlayerMovement(disable1).enabled = false;
             ReturnPlayerMovement(disable2).enabled = false;
@@ -69,10 +60,6 @@ namespace OTU.Managers {
 
         private PlayerMovement ReturnPlayerMovement(GameObject player) {
             return player.GetComponent<PlayerMovement>();
-        }
-
-        public int GetActivePlayerNumber() {
-            return activePlayer;
         }
 
         public string GetActivePlayerName() {

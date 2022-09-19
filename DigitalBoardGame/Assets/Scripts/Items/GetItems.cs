@@ -1,17 +1,18 @@
 using UnityEngine;
 using OTU.Core;
+using OTU.Managers;
 
 namespace OTU.Items {
     public class GetItems : MonoBehaviour 
     {
-        [SerializeField] private GameObject gameManager;
-        [Range(0,100)][SerializeField] private int chanceOfGettingItems = 50;
+        [Range(0, 100)][SerializeField] private int chanceOfGettingItems = 50;
         [SerializeField] private int itemsToGive;
         [SerializeField] private int loseTurns = 2;
+        
+        [Space(20)]
+        [SerializeField] private GameObject gameManager;
         [SerializeField] private GameObject itemsGainedPrompt;
         [SerializeField] private GameObject livesLostPrompt;
-
-        private int itemsRecieved = 0;
 
         private void Start() {
             itemsGainedPrompt.SetActive(false);
@@ -20,16 +21,15 @@ namespace OTU.Items {
 
         private void OnTriggerEnter2D(Collider2D other) {
             if (other.CompareTag("Player")) {
-                CheckForItems();
+                CheckForItems(other);
             }
         }
 
-        private void CheckForItems() {
+        private void CheckForItems(Collider2D other) {
             int chanceRolled = Random.Range(0, 100);
 
             if (chanceRolled < chanceOfGettingItems) {
-                itemsGainedPrompt.SetActive(true);
-                itemsRecieved += itemsToGive;
+                GiveItems(other);
             }
             else {
                 gameManager.GetComponent<GameManager>().ReduceTurns(loseTurns);
@@ -42,8 +42,9 @@ namespace OTU.Items {
             livesLostPrompt.SetActive(false);
         }
 
-        public int GetTotalItems() {
-            return itemsRecieved;
+        private void GiveItems(Collider2D other) {
+            itemsGainedPrompt.SetActive(true);
+            other.GetComponent<PlayerHandler>().AddItem(itemsToGive);
         }
     }
 }

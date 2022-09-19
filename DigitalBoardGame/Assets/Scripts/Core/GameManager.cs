@@ -4,9 +4,13 @@ namespace OTU.Core {
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private int maxTurnsAllowed = 30;
+
+        [Header("UI")]
         [SerializeField] private GameObject inGameUI;
         [SerializeField] private GameObject gameWonScreen;
         [SerializeField] private GameObject gameLostScreen;
+
+        private int turnsRolled;
 
         private void Start() {
             gameWonScreen.SetActive(false);
@@ -18,7 +22,7 @@ namespace OTU.Core {
             gameWonScreen.SetActive(true);
         }
 
-        public bool GameOver(int turnsRolled) {
+        public bool GameOver() {
             if (turnsRolled > maxTurnsAllowed) {
                 inGameUI.SetActive(false);
                 gameLostScreen.SetActive(true);
@@ -31,8 +35,16 @@ namespace OTU.Core {
             maxTurnsAllowed -= reduce;
         }
 
+        public void IncreaseTurnsRolled() {
+            turnsRolled++;
+        }
+
         public int GetMaxTurns() {
             return maxTurnsAllowed;
+        }
+
+        public int GetTurnsRolled() {
+            return turnsRolled;
         }
     }
 }

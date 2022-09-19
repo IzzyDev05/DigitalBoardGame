@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
         [SerializeField] private DieRoller dieRoller;
 
         private int spacesToMove = 0;
-        private int turnsRolled = 0;
         private bool shouldMove = false;
 
         private void Update() {
@@ -20,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
         public void RollDie(int rolledSpaces) {
             spacesToMove = rolledSpaces;
-            turnsRolled++;
-            bool isOver = gameManager.GetComponent<GameManager>().GameOver(turnsRolled);
+            gameManager.IncreaseTurnsRolled();
+            bool isOver = gameManager.GetComponent<GameManager>().GameOver();
 
             if (isOver) return;
             shouldMove = true;
@@ -49,10 +48,6 @@ public class PlayerMovement : MonoBehaviour
                 transform.Translate(moveRight);
                 shouldMove = false;
             }            
-        }
-
-        public int GetTurnsRolled() {
-            return turnsRolled;
         }
     }
 }

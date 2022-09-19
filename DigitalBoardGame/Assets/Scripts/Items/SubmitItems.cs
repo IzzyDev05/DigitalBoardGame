@@ -1,69 +1,74 @@
 using UnityEngine;
 using TMPro;
 using OTU.Core;
+using OTU.Managers;
 
 namespace OTU.Items {
     public class SubmitItems : MonoBehaviour
     {
         [SerializeField] private int itemsRequired = 5;
         [SerializeField] private GameManager gameManager;
-        [SerializeField] private GetItems itemGiver = null;
 
+        [Header("UI")]
         [SerializeField] private GameObject submitPrompt;
-        [SerializeField] private GameObject submitText;
-        [SerializeField] private GameObject submitAmount;
-        [SerializeField] private TextMeshProUGUI totalItems;
-        [SerializeField] private GameObject itemsLeftText;
-        [SerializeField] private GameObject itemsLeftAmount;
+        [SerializeField] private GameObject totalItemsReqText;
+        [SerializeField] private GameObject totalItemsReqAmount;
+        [SerializeField] private GameObject totalItemsSubmittedText;
+        [SerializeField] private GameObject totalItemsSubmittedAmount;
 
-        private int itemsRecieved = 0;
+        private int playerItems = 0;
+        private int itemsSubmitted = 0;
+        private PlayerHandler player;
+        private bool isInVicinity = false;
 
         private void Start() {
-            submitPrompt.SetActive(false);
-            submitText.SetActive(false);
-            submitAmount.SetActive(false);
-            itemsLeftText.SetActive(false);
-            itemsLeftAmount.SetActive(false);
+            DisableUI();
         }
 
         private void Update() {
-            itemsRecieved = itemGiver.GetTotalItems();
+            if (!isInVicinity) return;
 
-            totalItems.text = itemsRecieved.ToString();
-        }
+            totalItemsSubmittedAmount.GetComponent<TextMeshProUGUI>().text = itemsSubmitted.ToString();
 
-        private void OnTriggerEnter2D(Collider2D other) {
-            if (!other.CompareTag("Player")) return;
-            submitPrompt.SetActive(true);
-            submitText.SetActive(true);
-            submitAmount.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E)) {
+                playerItems = player.GetTotalItems();
+                itemsSubmitted += playerItems;
+                player.RemoveItems();
 
-            submitAmount.GetComponent<TextMeshProUGUI>().text = itemsRequired.ToString();
-        }
-
-        private void OnTriggerStay2D(Collider2D other) {
-            if (!other.CompareTag("Player")) return;
-
-            if (Input.GetKey(KeyCode.E)) {
-                if (itemsRecieved >= itemsRequired) {
+                if (itemsSubmitted >= itemsRequired) {
                     gameManager.GameWon();
                 }
                 else {
-                    int itemsLeft = itemsRequired - itemsRecieved;
-
-                    itemsLeftText.SetActive(true);
-                    itemsLeftAmount.GetComponent<TextMeshProUGUI>().text = itemsLeft.ToString();
-                    itemsLeftAmount.SetActive(true);
+                    int itemsLeft = itemsSubmitted - playerItems;
                 }
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D other) {
+            if (!other.CompareTag("Player")) return;
+            isInVicinity = true;
+            player = other.GetComponent<PlayerHandler>();
+
+            submitPrompt.SetActive(true);
+            totalItemsReqText.SetActive(true);
+            totalItemsReqAmount.SetActive(true);
+            totalItemsSubmittedText.SetActive(true);
+            totalItemsSubmittedAmount.SetActive(true);
+
+            totalItemsReqAmount.GetComponent<TextMeshProUGUI>().text = itemsRequired.ToString();
+        }
+
         private void OnTriggerExit2D(Collider2D other) {
+            player = null;
+            DisableUI();
+        }
+
+        private void DisableUI() {
             submitPrompt.SetActive(false);
-            submitText.SetActive(false);
-            submitAmount.SetActive(false);
-            itemsLeftText.SetActive(false);
-            itemsLeftAmount.SetActive(false);
+            totalItemsReqText.SetActive(false);
+            totalItemsReqAmount.SetActive(false);
+            totalItemsSubmittedText.SetActive(false);
+            totalItemsSubmittedAmount.SetActive(false);
         }
     }
 }

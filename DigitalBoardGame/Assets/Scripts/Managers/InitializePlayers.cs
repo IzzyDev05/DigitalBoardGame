@@ -1,11 +1,12 @@
 using UnityEngine;
-using OTU.Movement;
-using OTU.Core;
 
 namespace OTU.Managers {
     public class InitializePlayers : MonoBehaviour {
-        [SerializeField] GameObject preGameUI = null;
-        [SerializeField] GameObject inGameUI = null;
+        [HideInInspector] public bool arePlayersNamed = false;
+
+        [SerializeField] private GameObject preGameUI = null;
+        [SerializeField] private GameObject inGameUI = null;
+
         private PlayerHandler[] players;
 
         private void Start() {
@@ -24,6 +25,7 @@ namespace OTU.Managers {
                 player.GetComponent<SpriteRenderer>().enabled = true;
             }
 
+            arePlayersNamed = true;
             preGameUI.SetActive(false);
             inGameUI.SetActive(true);
         }

@@ -6,10 +6,10 @@ namespace OTU.UI {
     {
         private PlayerHandler[] players;
 
-        private string username1;
-        private string username2;
-        private string username3;
-        private string username4;
+        [HideInInspector] public string username1;
+        [HideInInspector] public string username2;
+        [HideInInspector] public string username3;
+        [HideInInspector] public string username4;
 
         private void Start() {
             players = FindObjectsOfType<PlayerHandler>();
