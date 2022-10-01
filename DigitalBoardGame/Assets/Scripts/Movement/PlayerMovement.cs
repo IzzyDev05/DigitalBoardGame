@@ -51,15 +51,18 @@ public class PlayerMovement : MonoBehaviour
         private void MovePlayerInDirection(Vector2 direction) {
             CheckBoundry(direction);
 
-            for (int i = 0; i < spacesToMove; i++) {
+            if (spacesToMove > 0) {
                 if (!canMove) return;
 
                 transform.Translate(direction * movementFactor);
                 canMove = false;
                 CheckBoundry(direction);
-            }
 
-            shouldMove = false;
+                spacesToMove--;
+            }
+            else {
+                shouldMove = false;
+            }
         }
 
         private void CheckBoundry(Vector2 direction) {

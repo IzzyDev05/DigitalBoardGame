@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace OTU.Core {
     public class GameManager : MonoBehaviour
@@ -15,6 +16,12 @@ namespace OTU.Core {
         private void Start() {
             gameWonScreen.SetActive(false);
             gameLostScreen.SetActive(false);
+        }
+
+        private void Update() {
+            if (Input.GetKeyDown(KeyCode.R)) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
 
         public void GameWon() {

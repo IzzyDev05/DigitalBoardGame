@@ -1,12 +1,14 @@
 using UnityEngine;
 using OTU.Core;
 using OTU.Managers;
+using OTU.Inventory;
 
 namespace OTU.Items {
     public class GetItems : MonoBehaviour 
     {
         [Range(0, 100)][SerializeField] private int chanceOfGettingItems = 50;
         [SerializeField] private int itemsToGive;
+        [SerializeField] private ItemsSO itemType;
         [SerializeField] private int loseTurns = 2;
         
         [Space(20)]
@@ -45,6 +47,7 @@ namespace OTU.Items {
         private void GiveItems(Collider2D other) {
             itemsGainedPrompt.SetActive(true);
             other.GetComponent<PlayerHandler>().AddItem(itemsToGive);
+            other.GetComponent<PlayerHandler>().AddActualItem(itemType);
         }
     }
 }

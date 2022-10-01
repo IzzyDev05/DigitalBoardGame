@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using OTU.Inventory;
 
 namespace OTU.Managers {
     public class PlayerHandler : MonoBehaviour {
@@ -8,6 +10,8 @@ namespace OTU.Managers {
             player3,
             player4
         }
+
+        public List<ItemsSO> itemsList = new List<ItemsSO>();
 
         public PlayerNumber playerNumber;
         private int totalItems = 0;
@@ -20,8 +24,20 @@ namespace OTU.Managers {
             totalItems = 0;
         }
 
+        public void AddActualItem(ItemsSO item) {
+            itemsList.Add(item);
+        }
+
+        public void RemoveActualItems() {
+            itemsList.Clear();
+        }
+
         public int GetTotalItems() {
             return totalItems;
+        }
+
+        public List<ItemsSO> GetTotalItemsX() {
+            return itemsList;
         }
     }
 }
