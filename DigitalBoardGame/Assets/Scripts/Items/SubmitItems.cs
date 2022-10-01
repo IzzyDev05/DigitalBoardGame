@@ -1,12 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using OTU.Core;
 using OTU.Managers;
+using OTU.Inventory;
 
 namespace OTU.Items {
     public class SubmitItems : MonoBehaviour
     {
         [SerializeField] private int itemsRequired = 5;
+        [SerializeField] private int nutsRequired = 3;
+        [SerializeField] private int fuelRequired = 2;
         [SerializeField] private GameManager gameManager;
 
         [Header("UI")]
@@ -16,10 +20,16 @@ namespace OTU.Items {
         [SerializeField] private GameObject totalItemsSubmittedText;
         [SerializeField] private GameObject totalItemsSubmittedAmount;
 
-        private int playerItems = 0;
         private int itemsSubmitted = 0;
         private PlayerHandler player;
         private bool isInVicinity = false;
+
+
+        private List<ItemsSO> items;
+        private int numberOfNuts;
+        private int amountOfFuel;
+        private int nutsSubmitted;
+        private int fuelSubmitted;
 
         private void Start() {
             DisableUI();
@@ -30,17 +40,38 @@ namespace OTU.Items {
 
             totalItemsSubmittedAmount.GetComponent<TextMeshProUGUI>().text = itemsSubmitted.ToString();
 
-            if (Input.GetKeyDown(KeyCode.E)) {
-                playerItems = player.GetTotalItems();
-                itemsSubmitted += playerItems;
-                player.RemoveItems();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Submit();
+            }
+        }
 
-                if (itemsSubmitted >= itemsRequired) {
-                    gameManager.GameWon();
+        private void Submit() {
+            items = player.GetTotalItemsX();
+            foreach (ItemsSO item in items) {
+                if (item.itemType == ItemsSO.ItemType.nutsAndBolts) {
+                    numberOfNuts++;
                 }
-                else {
-                    int itemsLeft = itemsSubmitted - playerItems;
+                else if (item.itemType == ItemsSO.ItemType.nutsAndBolts) {
+                    amountOfFuel++;
                 }
+            }
+
+            nutsSubmitted += numberOfNuts;
+            fuelSubmitted += amountOfFuel;
+            player.RemoveActualItems();
+            numberOfNuts = 0;
+            amountOfFuel = 0;
+
+            if (nutsSubmitted + fuelSubmitted >= nutsRequired + fuelRequired) {
+                gameManager.GameWon();
+            }
+            else {
+                int nutsLeft = nutsRequired - nutsSubmitted;
+                int boltsLeft = fuelRequired - fuelSubmitted;
+
+                print("Nuts left: " + nutsLeft);
+                print("Bolts left: " + boltsLeft);
             }
         }
 

@@ -52,6 +52,8 @@ namespace OTU.Managers {
         }
 
         private void SetPlayers(GameObject toEnable, GameObject disable1, GameObject disable2, GameObject disable3) {
+            toEnable.GetComponent<PlayerMovement>().EnablePlayerMovement();
+            
             ReturnPlayerMovement(toEnable).enabled = true;
             ReturnPlayerMovement(disable1).enabled = false;
             ReturnPlayerMovement(disable2).enabled = false;
