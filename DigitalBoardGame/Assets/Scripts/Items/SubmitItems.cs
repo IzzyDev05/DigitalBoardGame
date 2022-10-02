@@ -8,71 +8,77 @@ using OTU.Inventory;
 namespace OTU.Items {
     public class SubmitItems : MonoBehaviour
     {
-        [SerializeField] private int itemsRequired = 5;
         [SerializeField] private int nutsRequired = 3;
         [SerializeField] private int fuelRequired = 2;
+        [SerializeField] private int woodRequired = 5;
         [SerializeField] private GameManager gameManager;
 
         [Header("UI")]
         [SerializeField] private GameObject submitPrompt;
-        [SerializeField] private GameObject totalItemsReqText;
-        [SerializeField] private GameObject totalItemsReqAmount;
-        [SerializeField] private GameObject totalItemsSubmittedText;
-        [SerializeField] private GameObject totalItemsSubmittedAmount;
+        [SerializeField] private GameObject submitMenu;
+        [SerializeField] private TextMeshProUGUI[] itemsReq;
+        [SerializeField] private TextMeshProUGUI[] itemsSubmittedAmount;
 
         private int itemsSubmitted = 0;
         private PlayerHandler player;
         private bool isInVicinity = false;
 
-
         private List<ItemsSO> items;
         private int numberOfNuts;
         private int amountOfFuel;
+        private int amountOfWood;
         private int nutsSubmitted;
         private int fuelSubmitted;
+        private int woodSubmitted;
 
         private void Start() {
             DisableUI();
+
+            itemsReq[0].text = nutsRequired.ToString();
+            itemsReq[1].text = fuelRequired.ToString();
+            itemsReq[2].text = woodRequired.ToString();
         }
 
         private void Update() {
             if (!isInVicinity) return;
 
-            totalItemsSubmittedAmount.GetComponent<TextMeshProUGUI>().text = itemsSubmitted.ToString();
-
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Submit();
+                submitPrompt.SetActive(false);
+                submitMenu.SetActive(true);
             }
+
+            itemsSubmittedAmount[0].text = nutsSubmitted.ToString();
+            itemsSubmittedAmount[1].text = fuelSubmitted.ToString();
+            itemsSubmittedAmount[2].text = woodSubmitted.ToString();
         }
 
-        private void Submit() {
-            items = player.GetTotalItemsX();
-            foreach (ItemsSO item in items) {
-                if (item.itemType == ItemsSO.ItemType.nutsAndBolts) {
-                    numberOfNuts++;
-                }
-                else if (item.itemType == ItemsSO.ItemType.nutsAndBolts) {
-                    amountOfFuel++;
-                }
-            }
+        public void Submit() {
+            numberOfNuts = player.GetTotalNuts();
+            amountOfFuel = player.GetTotalFuel();
+            amountOfWood = player.GetTotalWood();
 
             nutsSubmitted += numberOfNuts;
             fuelSubmitted += amountOfFuel;
-            player.RemoveActualItems();
+            woodSubmitted += amountOfWood;
+
+            player.RemoveItems();
             numberOfNuts = 0;
             amountOfFuel = 0;
+            amountOfWood = 0;
 
-            if (nutsSubmitted + fuelSubmitted >= nutsRequired + fuelRequired) {
+            if (nutsSubmitted >= nutsRequired && nutsSubmitted >= nutsRequired && woodSubmitted >= woodRequired) {
                 gameManager.GameWon();
             }
             else {
                 int nutsLeft = nutsRequired - nutsSubmitted;
                 int boltsLeft = fuelRequired - fuelSubmitted;
-
-                print("Nuts left: " + nutsLeft);
-                print("Bolts left: " + boltsLeft);
+                int woodLeft = woodRequired - woodSubmitted;
             }
+        }
+
+        public void Back() {
+            DisableUI();
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
@@ -81,25 +87,17 @@ namespace OTU.Items {
             player = other.GetComponent<PlayerHandler>();
 
             submitPrompt.SetActive(true);
-            totalItemsReqText.SetActive(true);
-            totalItemsReqAmount.SetActive(true);
-            totalItemsSubmittedText.SetActive(true);
-            totalItemsSubmittedAmount.SetActive(true);
-
-            totalItemsReqAmount.GetComponent<TextMeshProUGUI>().text = itemsRequired.ToString();
         }
 
         private void OnTriggerExit2D(Collider2D other) {
             player = null;
+            isInVicinity = false;
             DisableUI();
         }
 
         private void DisableUI() {
             submitPrompt.SetActive(false);
-            totalItemsReqText.SetActive(false);
-            totalItemsReqAmount.SetActive(false);
-            totalItemsSubmittedText.SetActive(false);
-            totalItemsSubmittedAmount.SetActive(false);
+            submitMenu.SetActive(false);
         }
     }
 }

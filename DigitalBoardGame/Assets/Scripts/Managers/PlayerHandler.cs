@@ -16,28 +16,45 @@ namespace OTU.Managers {
         public PlayerNumber playerNumber;
         private int totalItems = 0;
 
-        public void AddItem(int numberOfItems) {
-            totalItems += numberOfItems;
-        }
-
-        public void RemoveItems() {
-            totalItems = 0;
-        }
-
-        public void AddActualItem(ItemsSO item) {
+        public void AddItems(ItemsSO item) {
             itemsList.Add(item);
         }
 
-        public void RemoveActualItems() {
+        public void RemoveItems() {
             itemsList.Clear();
         }
 
-        public int GetTotalItems() {
-            return totalItems;
+        public int GetTotalNuts() {
+            int nuts = 0;
+            
+            foreach (ItemsSO item in itemsList) {
+                if (item.itemType == ItemsSO.ItemType.nutsAndBolts) {
+                    nuts++;
+                }
+            }
+            return nuts;
         }
 
-        public List<ItemsSO> GetTotalItemsX() {
-            return itemsList;
+        public int GetTotalFuel() {
+            int fuel = 0;
+            
+            foreach (ItemsSO item in itemsList) {
+                if (item.itemType == ItemsSO.ItemType.fuel) {
+                    fuel++;
+                }
+            }
+            return fuel;
+        }
+
+        public int GetTotalWood() {
+            int wood = 0;
+            
+            foreach (ItemsSO item in itemsList) {
+                if (item.itemType == ItemsSO.ItemType.wood) {
+                    wood++;
+                }
+            }
+            return wood;
         }
     }
 }

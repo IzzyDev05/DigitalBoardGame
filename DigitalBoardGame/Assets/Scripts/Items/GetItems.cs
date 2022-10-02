@@ -46,8 +46,7 @@ namespace OTU.Items {
 
         private void GiveItems(Collider2D other) {
             itemsGainedPrompt.SetActive(true);
-            other.GetComponent<PlayerHandler>().AddItem(itemsToGive);
-            other.GetComponent<PlayerHandler>().AddActualItem(itemType);
+            other.GetComponent<PlayerHandler>().AddItems(itemType);
         }
     }
 }

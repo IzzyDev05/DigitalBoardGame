@@ -7,6 +7,7 @@ namespace OTU.Core {
         [SerializeField] private int maxTurnsAllowed = 30;
 
         [Header("UI")]
+        [SerializeField] private GameObject preGameUI;
         [SerializeField] private GameObject inGameUI;
         [SerializeField] private GameObject gameWonScreen;
         [SerializeField] private GameObject gameLostScreen;
@@ -14,12 +15,13 @@ namespace OTU.Core {
         private int turnsRolled;
 
         private void Start() {
+            preGameUI.SetActive(true);
             gameWonScreen.SetActive(false);
             gameLostScreen.SetActive(false);
         }
 
         private void Update() {
-            if (Input.GetKeyDown(KeyCode.R)) {
+            if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R)) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }

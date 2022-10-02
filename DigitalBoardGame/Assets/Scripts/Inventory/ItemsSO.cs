@@ -8,7 +8,6 @@ namespace OTU.Inventory {
             nutsAndBolts,
             fuel,
             wood,
-            engineThings
         }
 
         public string itemName;
