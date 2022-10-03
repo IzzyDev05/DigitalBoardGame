@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 563400d09706190489a06ce623f1526b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8771822612617507967
+    second: YellowShirt - Down1
+  - first:
+      213: -4011442762624139783
+    second: YellowShirt - Down2
+  - first:
+      213: -8438367777940237923
+    second: YellowShirt - Down3
+  - first:
+      213: -4890909208803440214
+    second: YellowShirt - Left1
+  - first:
+      213: 267331730188638403
+    second: YellowShirt - Left2
+  - first:
+      213: 2566571215844350950
+    second: YellowShirt - Left3
+  - first:
+      213: 5009803122792353840
+    second: YellowShirt - Right1
+  - first:
+      213: -2430187393598505757
+    second: YellowShirt - Right2
+  - first:
+      213: 6717187982972023563
+    second: YellowShirt - Right3
+  - first:
+      213: -8129364495407866223
+    second: YellowShirt - Up1
+  - first:
+      213: -2948106877426448346
+    second: YellowShirt - Up2
+  - first:
+      213: 1600228446972783776
+    second: YellowShirt - Up3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +137,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: YellowShirt - Down1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 204
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f743ec9e036cbb970800000000000000
+      internalID: 8771822612617507967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Down2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 205
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fdf9f89f0e7458c0800000000000000
+      internalID: -4011442762624139783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Down3
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 204
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9115cfd635e4ea80800000000000000
+      internalID: -8438367777940237923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Left1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 141
+        width: 13
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9859cdcffff1cb0800000000000000
+      internalID: -4890909208803440214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Left2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 141
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8951fcac0c5b300800000000000000
+      internalID: 267331730188638403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Left3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 141
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb152b2cea4e9320800000000000000
+      internalID: 2566571215844350950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Right1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 77
+        width: 13
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0305ea8a565668540800000000000000
+      internalID: 5009803122792353840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Right2
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 77
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ecbde2f07d364ed0800000000000000
+      internalID: -2430187393598505757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Right3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 77
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03f19e91ee383d50800000000000000
+      internalID: 6717187982972023563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Up1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 12
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e9a890012be2f80800000000000000
+      internalID: -8129364495407866223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Up2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 13
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6284c1b2a683617d0800000000000000
+      internalID: -2948106877426448346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowShirt - Up3
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 12
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aca94d4b47253610800000000000000
+      internalID: 1600228446972783776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

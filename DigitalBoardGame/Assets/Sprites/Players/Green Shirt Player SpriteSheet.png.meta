@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 8d22f4b07988ec24381205d938171f77
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3805183793101877552
+    second: GreenShirt - Up1
+  - first:
+      213: 1754009783751668067
+    second: GreenShirt - Up2
+  - first:
+      213: 5090997132092468934
+    second: GreenShirt - Up3
+  - first:
+      213: 5094179483558735266
+    second: GreenShirt - Right1
+  - first:
+      213: 8251480108544549886
+    second: GreenShirt - Right2
+  - first:
+      213: -1582846214213393277
+    second: GreenShirt - Right3
+  - first:
+      213: 4581024535483261550
+    second: GreenShirt - Left1
+  - first:
+      213: 4699468416719496724
+    second: GreenShirt - Left2
+  - first:
+      213: -8295041272787945105
+    second: GreenShirt - Left3
+  - first:
+      213: -4316818298815586054
+    second: GreenShirt - Down1
+  - first:
+      213: 817174099896364144
+    second: GreenShirt - Down2
+  - first:
+      213: 5754600282625064254
+    second: GreenShirt - Down3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +137,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GreenShirt - Up1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 155
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dec61b3085413bc0800000000000000
+      internalID: -3805183793101877552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Up2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 156
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361f31dea9e775810800000000000000
+      internalID: 1754009783751668067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Up3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 155
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce67ea1bead6a640800000000000000
+      internalID: 5090997132092468934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Right1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 106
+        width: 13
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ade99b004922b640800000000000000
+      internalID: 5094179483558735266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Right2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 106
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3eff4c075238270800000000000000
+      internalID: 8251480108544549886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Right3
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 106
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3842db321c9980ae0800000000000000
+      internalID: -1582846214213393277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Left1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 56
+        width: 13
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6224d03b81139f30800000000000000
+      internalID: 4581024535483261550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Left2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 56
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416abbb40add73140800000000000000
+      internalID: 4699468416719496724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Left3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 56
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f69354259e712ec80800000000000000
+      internalID: -8295041272787945105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Down1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 5
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0e033f0a49714c0800000000000000
+      internalID: -4316818298815586054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Down2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 6
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ce8f7a38f275b00800000000000000
+      internalID: 817174099896364144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenShirt - Down3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 5
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3dba36c7727cdf40800000000000000
+      internalID: 5754600282625064254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

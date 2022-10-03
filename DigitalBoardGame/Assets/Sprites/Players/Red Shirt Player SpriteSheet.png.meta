@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 4088ba5aed5edb243b256be9d91a5119
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5031628651279380170
+    second: RedShirt - Down1
+  - first:
+      213: 2309297386235299654
+    second: RedShirt - Down2
+  - first:
+      213: 158615509399742738
+    second: RedShirt - Down3
+  - first:
+      213: 1511729797086767263
+    second: RedShirt - Left1
+  - first:
+      213: -2566439737633315928
+    second: RedShirt - Left2
+  - first:
+      213: 7714246829081170094
+    second: RedShirt - Left3
+  - first:
+      213: -1687848277118600313
+    second: RedShirt - Right1
+  - first:
+      213: 5867611089818050152
+    second: RedShirt - Right2
+  - first:
+      213: 2195632291843687310
+    second: RedShirt - Right3
+  - first:
+      213: -6051906437413646985
+    second: RedShirt - Up1
+  - first:
+      213: 6664134821875274685
+    second: RedShirt - Up2
+  - first:
+      213: 2521197891876174966
+    second: RedShirt - Up3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +137,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: RedShirt - Down1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 155
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace6f21899fe3d540800000000000000
+      internalID: 5031628651279380170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Down2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 156
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6470b43dcb54c0020800000000000000
+      internalID: 2309297386235299654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Down3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 155
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219a3a527f3833200800000000000000
+      internalID: 158615509399742738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Left1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 106
+        width: 13
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98eabfad3ebaf410800000000000000
+      internalID: 1511729797086767263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Left2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 106
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a36becf7ac226cd0800000000000000
+      internalID: -2566439737633315928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Left3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 106
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea011158e928e0b60800000000000000
+      internalID: 7714246829081170094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Right1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 56
+        width: 13
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b379f3fee8398e0800000000000000
+      internalID: -1687848277118600313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Right2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 56
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e5fb0c231fd6150800000000000000
+      internalID: 5867611089818050152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Right3
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 56
+        width: 15
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8348bcbfe3787e10800000000000000
+      internalID: 2195632291843687310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Up1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 5
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d4f08d82f430ca0800000000000000
+      internalID: -6051906437413646985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Up2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 6
+        width: 16
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3df29ff43cb7c50800000000000000
+      internalID: 6664134821875274685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedShirt - Up3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 5
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c3eb1ff181df220800000000000000
+      internalID: 2521197891876174966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
