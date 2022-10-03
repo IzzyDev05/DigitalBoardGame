@@ -21,6 +21,7 @@ namespace OTU.Managers {
         }
 
         public void StartGame() {
+            FindObjectOfType<AudioManager>().Play("Click");
             foreach (PlayerHandler player in players) {
                 player.GetComponent<SpriteRenderer>().enabled = true;
             }

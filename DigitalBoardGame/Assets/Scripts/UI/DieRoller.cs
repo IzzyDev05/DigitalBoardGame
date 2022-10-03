@@ -12,11 +12,12 @@ namespace OTU.UI {
         [SerializeField] private TextMeshProUGUI rolledNumber;
         [SerializeField] private TextMeshProUGUI rollsLeft;
         
-        
+        private AudioManager audioManager;
         private int spacesToMove;
         private int turnsRolled;
 
         private void Start() {
+            audioManager = FindObjectOfType<AudioManager>();
             players = FindObjectsOfType<PlayerMovement>();
             rollsLeft.text = gameManager.GetMaxTurns().ToString();
         }
@@ -32,6 +33,8 @@ namespace OTU.UI {
         }
 
         public void RollDie() {
+            audioManager.Play("Dice Sound");
+            audioManager.Play("Click");
             bool isOver = gameManager.GetComponent<GameManager>().GameOver();
             if (isOver) return;
 

@@ -20,11 +20,13 @@ namespace OTU.UI {
 
         private bool showInventory = false;
         private bool changedPlayerNames = false;
+        private AudioManager audioManager;
         private PlayerUsernames playerUsernames;
         private InitializePlayers initializePlayers;
         private List<ItemsSO> items = new List<ItemsSO>();
 
         private void Start() {
+            audioManager = FindObjectOfType<AudioManager>();
             inventoryPanel.SetActive(false);
             playerUsernames = FindObjectOfType<PlayerUsernames>();
             initializePlayers = FindObjectOfType<InitializePlayers>();
@@ -83,6 +85,7 @@ namespace OTU.UI {
         }
 
         public void SwitchPlayer1() {
+            audioManager.Play("Click");
             playerPanels[0].SetActive(true);
             playerPanels[1].SetActive(false);
             playerPanels[2].SetActive(false);
@@ -90,6 +93,7 @@ namespace OTU.UI {
         }
 
         public void SwitchPlayer2() {
+            audioManager.Play("Click");
             playerPanels[0].SetActive(false);
             playerPanels[1].SetActive(true);
             playerPanels[2].SetActive(false);
@@ -97,6 +101,7 @@ namespace OTU.UI {
         }
 
         public void SwitchPlayer3() {
+            audioManager.Play("Click");
             playerPanels[0].SetActive(false);
             playerPanels[1].SetActive(false);
             playerPanels[2].SetActive(true);
@@ -104,6 +109,7 @@ namespace OTU.UI {
         }
 
         public void SwitchPlayer4() {
+            audioManager.Play("Click");
             playerPanels[0].SetActive(false);
             playerPanels[1].SetActive(false);
             playerPanels[2].SetActive(false);

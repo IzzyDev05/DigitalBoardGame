@@ -4494,8 +4494,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Dice Roll
+  - name: Dice Sound
     clip: {fileID: 8300000, guid: 3900062f8539ab148b5c02ce663fd710, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 003b4b8f597435f44a6a6a518371b853, type: 3}
     volume: 1
     pitch: 1
     loop: 0

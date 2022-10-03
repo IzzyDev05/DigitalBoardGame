@@ -31,7 +31,10 @@ namespace OTU.Items {
         private int fuelSubmitted;
         private int woodSubmitted;
 
+        private AudioManager audioManager;
+
         private void Start() {
+            audioManager = FindObjectOfType<AudioManager>();
             DisableUI();
 
             itemsReq[0].text = nutsRequired.ToString();
@@ -54,6 +57,7 @@ namespace OTU.Items {
         }
 
         public void Submit() {
+            audioManager.Play("Click");
             numberOfNuts = player.GetTotalNuts();
             amountOfFuel = player.GetTotalFuel();
             amountOfWood = player.GetTotalWood();
@@ -78,6 +82,7 @@ namespace OTU.Items {
         }
 
         public void Back() {
+            audioManager.Play("Click");
             DisableUI();
         }
 
