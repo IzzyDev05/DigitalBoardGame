@@ -1,26 +1,24 @@
-using UnityEngine.Audio;
-using UnityEngine;
 using System;
+using UnityEngine;
+using UnityEngine.Audio;
 
-public class AudioManager : MonoBehaviour {
-
+public class AudioManager : MonoBehaviour 
+{
     public Sound[] sounds;
-
     public static AudioManager instance;
-    void Awake () {
 
-        if (instance == null)
+    private void Awake() {
+        if (instance == null) {
             instance = this;
-        else
-        {
+        } 
+        else {
             Destroy(gameObject);
             return;
         }
-
+        
         DontDestroyOnLoad(gameObject);
 
-        foreach (Sound s in sounds)
-        {
+        foreach (Sound s in sounds) {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
@@ -30,11 +28,10 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-    public void Play (string name)
-    {
+    public void Play(string name) {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-        {
+
+        if (s == null) {
             Debug.LogWarning("Sound: " + name + "not found!");
             return;
         }

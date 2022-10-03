@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 namespace OTU.Core {
     public class GameManager : MonoBehaviour
     {
+        [HideInInspector] public static bool HasGameEnded = false;
+        [HideInInspector] public static bool IsMenuOpen = false;
+
         [SerializeField] private int maxTurnsAllowed = 30;
 
         [Header("UI")]
@@ -15,6 +18,9 @@ namespace OTU.Core {
         private int turnsRolled;
 
         private void Start() {
+            HasGameEnded = false;
+            IsMenuOpen = false;
+
             preGameUI.SetActive(true);
             gameWonScreen.SetActive(false);
             gameLostScreen.SetActive(false);
@@ -27,12 +33,17 @@ namespace OTU.Core {
         }
 
         public void GameWon() {
+            HasGameEnded = true;
+            FindObjectOfType<AudioManager>().Play("GameWon");
+
             inGameUI.SetActive(false);
             gameWonScreen.SetActive(true);
         }
 
         public bool GameOver() {
             if (turnsRolled > maxTurnsAllowed) {
+                HasGameEnded = true;
+                FindObjectOfType<AudioManager>().Play("GameLost");
                 inGameUI.SetActive(false);
                 gameLostScreen.SetActive(true);
                 return true;

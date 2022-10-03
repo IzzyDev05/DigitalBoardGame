@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using OTU.Core;
 using OTU.Managers;
 using OTU.Inventory;
 
@@ -37,6 +38,7 @@ namespace OTU.UI {
 
             if (Input.GetKeyDown(KeyCode.Tab)) {
                 showInventory = !showInventory;
+                GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
             }
 
             inventoryPanel.SetActive(showInventory);

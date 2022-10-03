@@ -47,6 +47,7 @@ namespace OTU.Items {
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
                 submitPrompt.SetActive(false);
                 submitMenu.SetActive(true);
             }
@@ -83,6 +84,7 @@ namespace OTU.Items {
 
         public void Back() {
             audioManager.Play("Click");
+            GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
             DisableUI();
         }
 
