@@ -13,9 +13,10 @@ namespace OTU.UI {
         [SerializeField] private TextMeshProUGUI[] playerNames;
 
         [SerializeField] private GameObject[] playerPanels;
-        [SerializeField] private TextMeshProUGUI[] nutsAmount;
+        [SerializeField] private TextMeshProUGUI[] screwAmount;
         [SerializeField] private TextMeshProUGUI[] fuelAmount;
         [SerializeField] private TextMeshProUGUI[] woodAmount;
+        [SerializeField] private TextMeshProUGUI[] rubberAmount;
 
         [SerializeField] private TextMeshProUGUI[] playerSwitchesNames;
 
@@ -77,11 +78,12 @@ namespace OTU.UI {
             Nuts();
             Fuel();
             Wood();
+            Rubber();
         }
 
         private void Nuts() {
             for (int i = 0; i < playerNames.Length; i++) {
-                nutsAmount[i].text = players[i].GetTotalNuts().ToString();
+                screwAmount[i].text = players[i].GetTotalScrews().ToString();
             }
         }
 
@@ -94,6 +96,12 @@ namespace OTU.UI {
         private void Wood() {
             for (int i = 0; i < playerNames.Length; i++) {
                 woodAmount[i].text = players[i].GetTotalWood().ToString();
+            }
+        }
+
+        private void Rubber() {
+            for (int i = 0; i < playerNames.Length; i++) {
+                rubberAmount[i].text = players[i].GetTotalRubber().ToString();
             }
         }
 

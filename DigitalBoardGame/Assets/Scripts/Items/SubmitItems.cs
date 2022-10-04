@@ -8,9 +8,10 @@ using OTU.Inventory;
 namespace OTU.Items {
     public class SubmitItems : MonoBehaviour
     {
-        [SerializeField] private int nutsRequired = 3;
+        [SerializeField] private int screwsRequired = 3;
         [SerializeField] private int fuelRequired = 2;
         [SerializeField] private int woodRequired = 5;
+        [SerializeField] private int rubberRequired = 3;
 
         [Header("UI")]
         [SerializeField] private GameObject submitPrompt;
@@ -23,12 +24,14 @@ namespace OTU.Items {
         private List<ItemsSO> items;
 
         private int itemsSubmitted = 0;
-        private int numberOfNuts;
+        private int amountOfScrews;
         private int amountOfFuel;
         private int amountOfWood;
-        private int nutsSubmitted;
+        private int amountOfRubber;
+        private int screwsSubmitted;
         private int fuelSubmitted;
         private int woodSubmitted;
+        private int rubberSubmitted;
         private bool isInVicinity = false;
 
         private AudioManager audioManager;
@@ -38,9 +41,10 @@ namespace OTU.Items {
             gameManager = FindObjectOfType<GameManager>();
             DisableUI();
 
-            itemsReq[0].text = nutsRequired.ToString();
+            itemsReq[0].text = screwsRequired.ToString();
             itemsReq[1].text = fuelRequired.ToString();
             itemsReq[2].text = woodRequired.ToString();
+            itemsReq[3].text = rubberRequired.ToString();
         }
 
         private void Update() {
@@ -54,33 +58,32 @@ namespace OTU.Items {
 
             submitMenu.SetActive(GameManager.IsMenuOpen);
 
-            itemsSubmittedAmount[0].text = nutsSubmitted.ToString();
+            itemsSubmittedAmount[0].text = screwsSubmitted.ToString();
             itemsSubmittedAmount[1].text = fuelSubmitted.ToString();
             itemsSubmittedAmount[2].text = woodSubmitted.ToString();
+            itemsSubmittedAmount[3].text = rubberSubmitted.ToString();
         }
 
         public void Submit() {
             audioManager.Play("Click");
-            numberOfNuts = player.GetTotalNuts();
+            amountOfScrews = player.GetTotalScrews();
             amountOfFuel = player.GetTotalFuel();
             amountOfWood = player.GetTotalWood();
+            amountOfRubber = player.GetTotalRubber();
 
-            nutsSubmitted += numberOfNuts;
+            screwsSubmitted += amountOfScrews;
             fuelSubmitted += amountOfFuel;
             woodSubmitted += amountOfWood;
+            rubberSubmitted += amountOfRubber; 
 
             player.RemoveItems();
-            numberOfNuts = 0;
+            amountOfScrews = 0;
             amountOfFuel = 0;
             amountOfWood = 0;
+            amountOfRubber = 0;
 
-            if (nutsSubmitted >= nutsRequired && fuelSubmitted >= fuelRequired && woodSubmitted >= woodRequired) {
+            if (screwsSubmitted >= screwsRequired && fuelSubmitted >= fuelRequired && woodSubmitted >= woodRequired && rubberSubmitted >= rubberRequired) {
                 gameManager.GameWon();
-            }
-            else {
-                int nutsLeft = nutsRequired - nutsSubmitted;
-                int boltsLeft = fuelRequired - fuelSubmitted;
-                int woodLeft = woodRequired - woodSubmitted;
             }
         }
 

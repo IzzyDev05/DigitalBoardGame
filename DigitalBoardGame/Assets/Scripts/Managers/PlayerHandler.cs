@@ -24,15 +24,15 @@ namespace OTU.Managers {
             itemsList.Clear();
         }
 
-        public int GetTotalNuts() {
-            int nuts = 0;
+        public int GetTotalScrews() {
+            int screws = 0;
             
             foreach (ItemsSO item in itemsList) {
-                if (item.itemType == ItemsSO.ItemType.nutsAndBolts) {
-                    nuts++;
+                if (item.itemType == ItemsSO.ItemType.screws) {
+                    screws++;
                 }
             }
-            return nuts;
+            return screws;
         }
 
         public int GetTotalFuel() {
@@ -55,6 +55,17 @@ namespace OTU.Managers {
                 }
             }
             return wood;
+        }
+
+        public int GetTotalRubber() {
+            int rubber = 0;
+            
+            foreach (ItemsSO item in itemsList) {
+                if (item.itemType == ItemsSO.ItemType.rubber) {
+                    rubber++;
+                }
+            }
+            return rubber;
         }
     }
 }

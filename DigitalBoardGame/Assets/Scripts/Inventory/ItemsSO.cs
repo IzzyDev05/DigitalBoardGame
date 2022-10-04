@@ -5,13 +5,13 @@ namespace OTU.Inventory {
     public class ItemsSO : ScriptableObject 
     {
         public enum ItemType {
-            nutsAndBolts,
+            screws,
             fuel,
             wood,
+            rubber
         }
 
         public string itemName;
-        public string itemDescription;
         public ItemType itemType;
     }
 }
