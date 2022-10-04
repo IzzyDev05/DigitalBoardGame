@@ -72,7 +72,7 @@ namespace OTU.Items {
             amountOfFuel = 0;
             amountOfWood = 0;
 
-            if (nutsSubmitted >= nutsRequired && nutsSubmitted >= nutsRequired && woodSubmitted >= woodRequired) {
+            if (nutsSubmitted >= nutsRequired && fuelSubmitted >= fuelRequired && woodSubmitted >= woodRequired) {
                 gameManager.GameWon();
             }
             else {
