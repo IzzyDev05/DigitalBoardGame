@@ -6,7 +6,8 @@ namespace OTU.Movement {
 public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] Sprite[] playerSprites;
-        [Range(0, 1)] [SerializeField] private float movementFactor = 1;
+        [SerializeField] ParticleSystem[] dustParticles;
+        [Range(0, 1)] public float movementFactor = 1;
         [SerializeField] private float raycastDistance = 10f;
         [SerializeField] private LayerMask edgeLayer;
 
@@ -67,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         private void MovePlayerInDirection(Vector2 direction) {
             CheckBoundry(direction);
             UpdateSprite(direction);
+            CreateDust(direction);
 
             if (spacesToMove > 0) {
                 if (!canMove) return;
@@ -106,6 +108,21 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (direction == Vector2.left) {
                 spriteRenderer.sprite = playerSprites[3];
+            }
+        }
+
+        private void CreateDust(Vector2 direction) {
+            if (direction == Vector2.up) {
+                dustParticles[0].Play();
+            }
+            else if (direction == Vector2.right) {
+                dustParticles[1].Play();
+            }
+            else if (direction == Vector2.down) {
+                dustParticles[2].Play();
+            }
+            else if (direction == Vector2.left) {
+                dustParticles[3].Play();
             }
         }
 

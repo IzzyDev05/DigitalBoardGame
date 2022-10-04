@@ -3,6 +3,7 @@ using TMPro;
 using OTU.Core;
 using OTU.Managers;
 using OTU.Inventory;
+using OTU.UI;
 
 namespace OTU.Items {
     public class BuildingTrigger : MonoBehaviour 
@@ -61,6 +62,7 @@ namespace OTU.Items {
 
         public void RandomizeItemChance() {
             int chanceRolled = Random.Range(0, 100);
+            FindObjectOfType<ShakeCamera>().Shake();
 
             if (chanceRolled < chanceOfGettingItems) {
                 GiveItems();
