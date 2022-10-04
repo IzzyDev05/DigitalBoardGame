@@ -11,10 +11,17 @@ public class PlayerMovement : MonoBehaviour
         [SerializeField] private float raycastDistance = 10f;
         [SerializeField] private LayerMask edgeLayer;
 
+        private AudioManager audioManager;
         private int spacesToMove = 0;
         private bool shouldMove = false;
         private bool canMove = true;
         private Vector3 lastPos;
+
+        private AudioRandomization audioRandomization;
+
+        private void Start() {
+            audioRandomization = FindObjectOfType<AudioRandomization>();
+        }
 
         private void Update() {
             if (shouldMove) {
@@ -55,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
                 if (!canMove) return;
 
                 transform.Translate(direction * movementFactor);
+                audioRandomization.RandomizeFootsteps();
                 canMove = false;
                 CheckBoundry(direction);
 
