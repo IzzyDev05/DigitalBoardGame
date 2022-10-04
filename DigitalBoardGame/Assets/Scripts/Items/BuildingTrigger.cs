@@ -22,7 +22,10 @@ namespace OTU.Items {
         private GameManager gameManager;
         private PlayerHandler playerHandler;
 
+        private AudioManager audioManager;
+
         private void Start() {
+            audioManager = FindObjectOfType<AudioManager>();
             gameManager = FindObjectOfType<GameManager>();
             searchPromptMenu.SetActive(false);
             resultText.text = "";
@@ -75,6 +78,7 @@ namespace OTU.Items {
         }        
 
         private void GiveItems() {
+            audioManager.Play("Pickup");
             playerHandler.AddItems(itemType);
         } 
     }
