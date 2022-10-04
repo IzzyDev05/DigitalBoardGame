@@ -8,28 +8,16 @@ namespace OTU.UI {
     public class DieRoller : MonoBehaviour
     {
         [SerializeField] private PlayerMovement[] players;
-        [SerializeField] private GameManager gameManager;
         [SerializeField] private TextMeshProUGUI rolledNumber;
-        [SerializeField] private TextMeshProUGUI rollsLeft;
-        
+
+        private GameManager gameManager;
         private AudioManager audioManager;
         private int spacesToMove;
-        private int turnsRolled;
 
         private void Start() {
+            gameManager = FindObjectOfType<GameManager>();
             audioManager = FindObjectOfType<AudioManager>();
             players = FindObjectsOfType<PlayerMovement>();
-            rollsLeft.text = gameManager.GetMaxTurns().ToString();
-        }
-        
-        private void Update() {
-            turnsRolled = gameManager.GetTurnsRolled();
-
-            int turnsLeft = gameManager.GetMaxTurns() - turnsRolled;
-            if (turnsLeft <= 0) {
-                turnsLeft = 0;
-            }
-            rollsLeft.text = turnsLeft.ToString();
         }
 
         public void RollDie() {

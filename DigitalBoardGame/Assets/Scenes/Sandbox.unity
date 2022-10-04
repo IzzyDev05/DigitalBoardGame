@@ -913,28 +913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1441471664 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2278858840679995, guid: 0d0c5b690c74e5b4c9241b2130755648, type: 3}
-  m_PrefabInstance: {fileID: 2278860227492491}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326a79eac7de83047a7cd2525e83afa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1441471666 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2278858840679993, guid: 0d0c5b690c74e5b4c9241b2130755648, type: 3}
-  m_PrefabInstance: {fileID: 2278860227492491}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebccf52fd19966d4385297610f6b6007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1441471667 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2278858840679992, guid: 0d0c5b690c74e5b4c9241b2130755648, type: 3}
@@ -1349,7 +1327,6 @@ MonoBehaviour:
   nutsRequired: 3
   fuelRequired: 2
   woodRequired: 5
-  gameManager: {fileID: 1441471664}
   submitPrompt: {fileID: 1617416502}
   submitMenu: {fileID: 1757801875}
   itemsReq:
@@ -1658,10 +1635,6 @@ PrefabInstance:
       propertyPath: gameLostScreen
       value: 
       objectReference: {fileID: 983652677}
-    - target: {fileID: 2278858840679995, guid: 0d0c5b690c74e5b4c9241b2130755648, type: 3}
-      propertyPath: maxTurnsAllowed
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d0c5b690c74e5b4c9241b2130755648, type: 3}
 --- !u!1001 &528715909280301076
@@ -1732,6 +1705,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1150691616}
+    - target: {fileID: 1257477865, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 531899279206991587, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1840,14 +1817,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 531899279457046294, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 1441471666}
-    - target: {fileID: 531899279457046295, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 1441471664}
     - target: {fileID: 531899279457046295, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: players.Array.data[0]
       value: 
@@ -1888,6 +1857,10 @@ PrefabInstance:
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1441471668}
+    - target: {fileID: 531899281196446477, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
 --- !u!1001 &4778846488249873180

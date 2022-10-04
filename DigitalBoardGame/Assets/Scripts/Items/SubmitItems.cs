@@ -11,7 +11,6 @@ namespace OTU.Items {
         [SerializeField] private int nutsRequired = 3;
         [SerializeField] private int fuelRequired = 2;
         [SerializeField] private int woodRequired = 5;
-        [SerializeField] private GameManager gameManager;
 
         [Header("UI")]
         [SerializeField] private GameObject submitPrompt;
@@ -19,8 +18,9 @@ namespace OTU.Items {
         [SerializeField] private TextMeshProUGUI[] itemsReq;
         [SerializeField] private TextMeshProUGUI[] itemsSubmittedAmount;
 
-        private int itemsSubmitted = 0;
         private PlayerHandler player;
+        private GameManager gameManager;
+        private int itemsSubmitted = 0;
         private bool isInVicinity = false;
 
         private List<ItemsSO> items;
@@ -35,6 +35,7 @@ namespace OTU.Items {
 
         private void Start() {
             audioManager = FindObjectOfType<AudioManager>();
+            gameManager = FindObjectOfType<GameManager>();
             DisableUI();
 
             itemsReq[0].text = nutsRequired.ToString();

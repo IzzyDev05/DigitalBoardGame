@@ -4,11 +4,15 @@ using OTU.Managers;
 
 namespace OTU.UI {
     public class ShowActivePlayer : MonoBehaviour {
-        [SerializeField] private SwitchPlayers gameManager;
         [SerializeField] private TextMeshProUGUI activePlayerNumber;
+        private SwitchPlayers switchPlayers;
+
+        private void Start() {
+            switchPlayers = FindObjectOfType<SwitchPlayers>();
+        }
 
         private void Update() {
-            activePlayerNumber.text = gameManager.GetActivePlayerName();
+            activePlayerNumber.text = switchPlayers.GetActivePlayerName();
         }
     }
 }

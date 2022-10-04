@@ -11,7 +11,7 @@ namespace OTU.Managers {
             player4
         }
 
-        public List<ItemsSO> itemsList = new List<ItemsSO>();
+        [HideInInspector] public List<ItemsSO> itemsList = new List<ItemsSO>();
 
         public PlayerNumber playerNumber;
         private int totalItems = 0;

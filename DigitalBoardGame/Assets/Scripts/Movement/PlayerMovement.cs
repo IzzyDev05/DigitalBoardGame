@@ -15,11 +15,12 @@ public class PlayerMovement : MonoBehaviour
         private AudioManager audioManager;
         private AudioRandomization audioRandomization;
         private SpriteRenderer spriteRenderer;
+
         private int spacesToMove = 0;
         private bool shouldMove = false;
         private bool canMove = true;
-        private Vector3 lastPos;
-
+        private Vector2 direction;
+    
         private void Start() {
             gameManager = FindObjectOfType<GameManager>();
             dieRoller = FindObjectOfType<DieRoller>();
@@ -36,8 +37,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         public void RollDie(int rolledSpaces) {
-            lastPos = transform.position;
-
             spacesToMove = rolledSpaces;
             gameManager.IncreaseTurnsRolled();
             bool isOver = gameManager.GetComponent<GameManager>().GameOver();
@@ -48,16 +47,20 @@ public class PlayerMovement : MonoBehaviour
         
         private void MovePlayer() {
             if (Input.GetKeyDown(KeyCode.W)) {
-                MovePlayerInDirection(Vector2.up);
+                direction = Vector2.up;
+                MovePlayerInDirection(direction);
             }
             if (Input.GetKeyDown(KeyCode.A)) {
-                MovePlayerInDirection(Vector2.left);
+                direction = Vector2.left;
+                MovePlayerInDirection(direction);
             }
             if (Input.GetKeyDown(KeyCode.S)) {
-                MovePlayerInDirection(Vector2.down);
+                direction = Vector2.down;
+                MovePlayerInDirection(direction);
             }
             if (Input.GetKeyDown(KeyCode.D)) {
-                MovePlayerInDirection(Vector2.right);
+                direction = Vector2.right;
+                MovePlayerInDirection(direction);
             }            
         }
 
