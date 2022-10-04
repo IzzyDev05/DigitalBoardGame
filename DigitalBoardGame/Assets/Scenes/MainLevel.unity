@@ -14665,7 +14665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5d15287f9d440459b207e3780d2088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceOfGettingItems: 100
+  chanceOfGettingItems: 80
   itemType: {fileID: 11400000, guid: 0dfa7847c6c71b149a882119d9a9b89f, type: 2}
   loseTurns: 2
   searchPromptText: {fileID: 616819636}
