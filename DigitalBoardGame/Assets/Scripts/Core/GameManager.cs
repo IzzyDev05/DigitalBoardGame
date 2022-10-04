@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 namespace OTU.Core {
     public class GameManager : MonoBehaviour
     {
+        public GameObject[] interfaces;
         [HideInInspector] public static bool HasGameEnded = false;
         [HideInInspector] public static bool IsMenuOpen = false;
 

@@ -13,7 +13,6 @@ namespace OTU.UI {
 
         private void Start() {
             gameManager = FindObjectOfType<GameManager>();
-            maximum = gameManager.GetMaxTurns();
         }
 
         private void Update() {
@@ -21,6 +20,7 @@ namespace OTU.UI {
         }
 
         private void GetCurrentFill() {
+            maximum = gameManager.GetMaxTurns();
             current = gameManager.GetTurnsRolled();
             float fillAmount = (float)current / (float)maximum;
 

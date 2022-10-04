@@ -1,12 +1,19 @@
 using UnityEngine;
 using OTU.Movement;
+using OTU.Core;
 
 namespace OTU.Managers {
     public class SwitchPlayers : MonoBehaviour {
         [SerializeField] private GameObject[] players;
+
+        private GameManager gameManager;
+        private GameObject[] interfaces;
         private GameObject activePlayerObject;
 
         private void Start() {
+            gameManager = GetComponent<GameManager>();
+            interfaces = gameManager.interfaces;
+
             ReturnPlayerMovement(players[0]).enabled = true;
             ReturnPlayerMovement(players[1]).enabled = false;
             ReturnPlayerMovement(players[2]).enabled = false;
@@ -26,6 +33,10 @@ namespace OTU.Managers {
             if (hit.collider != null) {
                 if (hit.collider.CompareTag("Player") && Input.GetMouseButtonDown(0)) {
                     SwitchBetweenPlayers(hit);
+
+                    foreach (GameObject obj in interfaces) {
+                        obj.SetActive(false);
+                    }
                 }
             }
         }

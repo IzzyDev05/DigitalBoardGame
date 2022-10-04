@@ -19,15 +19,20 @@ namespace OTU.UI {
 
         [SerializeField] private TextMeshProUGUI[] playerSwitchesNames;
 
-        private bool showInventory = false;
-        private bool changedPlayerNames = false;
+        private GameManager gameManager;
+        private GameObject[] interfaces;
         private AudioManager audioManager;
         private PlayerUsernames playerUsernames;
         private InitializePlayers initializePlayers;
         private List<ItemsSO> items = new List<ItemsSO>();
 
+        private bool showInventory = false;
+        private bool changedPlayerNames = false;
+
         private void Start() {
             audioManager = FindObjectOfType<AudioManager>();
+            gameManager = FindObjectOfType<GameManager>();
+            interfaces = gameManager.interfaces;
             inventoryPanel.SetActive(false);
             playerUsernames = FindObjectOfType<PlayerUsernames>();
             initializePlayers = FindObjectOfType<InitializePlayers>();
@@ -39,6 +44,12 @@ namespace OTU.UI {
             if (Input.GetKeyDown(KeyCode.Tab)) {
                 showInventory = !showInventory;
                 GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
+
+                foreach (GameObject obj in interfaces) {
+                    if (obj != this.gameObject) {
+                        obj.SetActive(false);
+                    }
+                }
             }
 
             inventoryPanel.SetActive(showInventory);

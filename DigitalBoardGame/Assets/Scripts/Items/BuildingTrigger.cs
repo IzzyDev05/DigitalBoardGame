@@ -27,6 +27,7 @@ namespace OTU.Items {
         private void Start() {
             audioManager = FindObjectOfType<AudioManager>();
             gameManager = FindObjectOfType<GameManager>();
+            
             searchPromptMenu.SetActive(false);
             resultText.text = "";
         }

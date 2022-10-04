@@ -20,16 +20,16 @@ namespace OTU.Items {
 
         private PlayerHandler player;
         private GameManager gameManager;
-        private int itemsSubmitted = 0;
-        private bool isInVicinity = false;
-
         private List<ItemsSO> items;
+
+        private int itemsSubmitted = 0;
         private int numberOfNuts;
         private int amountOfFuel;
         private int amountOfWood;
         private int nutsSubmitted;
         private int fuelSubmitted;
         private int woodSubmitted;
+        private bool isInVicinity = false;
 
         private AudioManager audioManager;
 
@@ -50,8 +50,9 @@ namespace OTU.Items {
             {
                 GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
                 submitPrompt.SetActive(false);
-                submitMenu.SetActive(true);
             }
+
+            submitMenu.SetActive(GameManager.IsMenuOpen);
 
             itemsSubmittedAmount[0].text = nutsSubmitted.ToString();
             itemsSubmittedAmount[1].text = fuelSubmitted.ToString();
