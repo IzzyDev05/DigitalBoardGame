@@ -5,22 +5,28 @@ using OTU.UI;
 namespace OTU.Movement {
 public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] private GameManager gameManager;
-        [SerializeField] private DieRoller dieRoller;
+        [SerializeField] Sprite[] playerSprites;
         [Range(0, 1)] [SerializeField] private float movementFactor = 1;
         [SerializeField] private float raycastDistance = 10f;
         [SerializeField] private LayerMask edgeLayer;
 
+        private GameManager gameManager;
+        private DieRoller dieRoller;
         private AudioManager audioManager;
+        private AudioRandomization audioRandomization;
+        private SpriteRenderer spriteRenderer;
         private int spacesToMove = 0;
         private bool shouldMove = false;
         private bool canMove = true;
         private Vector3 lastPos;
 
-        private AudioRandomization audioRandomization;
-
         private void Start() {
+            gameManager = FindObjectOfType<GameManager>();
+            dieRoller = FindObjectOfType<DieRoller>();
             audioRandomization = FindObjectOfType<AudioRandomization>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+            spriteRenderer.sprite = playerSprites[0];
         }
 
         private void Update() {
@@ -57,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
         private void MovePlayerInDirection(Vector2 direction) {
             CheckBoundry(direction);
+            UpdateSprite(direction);
 
             if (spacesToMove > 0) {
                 if (!canMove) return;
@@ -81,6 +88,21 @@ public class PlayerMovement : MonoBehaviour
             }
             else {
                 canMove = true;
+            }
+        }
+
+        private void UpdateSprite(Vector2 direction) {
+            if (direction == Vector2.up) {
+                spriteRenderer.sprite = playerSprites[0];
+            }
+            else if (direction == Vector2.right) {
+                spriteRenderer.sprite = playerSprites[1];
+            }
+            else if (direction == Vector2.down) {
+                spriteRenderer.sprite = playerSprites[2];
+            }
+            else if (direction == Vector2.left) {
+                spriteRenderer.sprite = playerSprites[3];
             }
         }
 

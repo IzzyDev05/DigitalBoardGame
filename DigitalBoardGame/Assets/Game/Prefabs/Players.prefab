@@ -88,7 +88,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a38be4aba84e33409ad1613f3d55b3c, type: 2}
+  - {fileID: 2100000, guid: d6935f8cd72eb7b4794e13593a30936b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,10 +106,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -201901641
+  m_SortingLayer: -2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 1754009783751668067, guid: 8d22f4b07988ec24381205d938171f77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -137,7 +137,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 1.3125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dcd181da9d214e43a94a9ce64fdf2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemsList: []
   playerNumber: 0
 --- !u!114 &4778846487597201457
 MonoBehaviour:
@@ -192,8 +193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbe8d239fded554d9883524bc259b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  dieRoller: {fileID: 0}
+  playerSprites:
+  - {fileID: 1754009783751668067, guid: 8d22f4b07988ec24381205d938171f77, type: 3}
+  - {fileID: 5094179483558735266, guid: 8d22f4b07988ec24381205d938171f77, type: 3}
+  - {fileID: 817174099896364144, guid: 8d22f4b07988ec24381205d938171f77, type: 3}
+  - {fileID: 4581024535483261550, guid: 8d22f4b07988ec24381205d938171f77, type: 3}
+  movementFactor: 1
   raycastDistance: 1
   edgeLayer:
     serializedVersion: 2
@@ -252,7 +257,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e6def3a331ba12f44a8200a437bc8622, type: 2}
+  - {fileID: 2100000, guid: d6935f8cd72eb7b4794e13593a30936b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -270,10 +275,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -201901641
+  m_SortingLayer: -2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 6664134821875274685, guid: 4088ba5aed5edb243b256be9d91a5119, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -301,7 +306,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 1.3125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -343,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dcd181da9d214e43a94a9ce64fdf2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemsList: []
   playerNumber: 2
 --- !u!114 &4778846487867331721
 MonoBehaviour:
@@ -356,8 +362,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbe8d239fded554d9883524bc259b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  dieRoller: {fileID: 0}
+  playerSprites:
+  - {fileID: 6664134821875274685, guid: 4088ba5aed5edb243b256be9d91a5119, type: 3}
+  - {fileID: -1687848277118600313, guid: 4088ba5aed5edb243b256be9d91a5119, type: 3}
+  - {fileID: 2309297386235299654, guid: 4088ba5aed5edb243b256be9d91a5119, type: 3}
+  - {fileID: 1511729797086767263, guid: 4088ba5aed5edb243b256be9d91a5119, type: 3}
+  movementFactor: 1
   raycastDistance: 1
   edgeLayer:
     serializedVersion: 2
@@ -416,7 +426,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1d8eb4f0eddb4064fb7c08816560715d, type: 2}
+  - {fileID: 2100000, guid: d6935f8cd72eb7b4794e13593a30936b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -434,10 +444,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -201901641
+  m_SortingLayer: -2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: -2948106877426448346, guid: 563400d09706190489a06ce623f1526b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -465,7 +475,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 1.3125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -507,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dcd181da9d214e43a94a9ce64fdf2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemsList: []
   playerNumber: 3
 --- !u!114 &4778846488119308019
 MonoBehaviour:
@@ -520,8 +531,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbe8d239fded554d9883524bc259b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  dieRoller: {fileID: 0}
+  playerSprites:
+  - {fileID: -2948106877426448346, guid: 563400d09706190489a06ce623f1526b, type: 3}
+  - {fileID: 5009803122792353840, guid: 563400d09706190489a06ce623f1526b, type: 3}
+  - {fileID: -4011442762624139783, guid: 563400d09706190489a06ce623f1526b, type: 3}
+  - {fileID: -4890909208803440214, guid: 563400d09706190489a06ce623f1526b, type: 3}
+  movementFactor: 1
   raycastDistance: 1
   edgeLayer:
     serializedVersion: 2
@@ -580,7 +595,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c24c0254a96cee4587efd7eac13461e, type: 2}
+  - {fileID: 2100000, guid: d6935f8cd72eb7b4794e13593a30936b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -598,10 +613,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -201901641
+  m_SortingLayer: -2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: -5445467428302049302, guid: 2a7e1d2bbe675704a9b29efbe372f0a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -629,7 +644,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 1.3125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -671,6 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dcd181da9d214e43a94a9ce64fdf2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemsList: []
   playerNumber: 1
 --- !u!114 &4778846488995564223
 MonoBehaviour:
@@ -684,8 +700,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbe8d239fded554d9883524bc259b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  dieRoller: {fileID: 0}
+  playerSprites:
+  - {fileID: -5445467428302049302, guid: 2a7e1d2bbe675704a9b29efbe372f0a1, type: 3}
+  - {fileID: 5987913661351501365, guid: 2a7e1d2bbe675704a9b29efbe372f0a1, type: 3}
+  - {fileID: 1876356357352702698, guid: 2a7e1d2bbe675704a9b29efbe372f0a1, type: 3}
+  - {fileID: 7843637131330071794, guid: 2a7e1d2bbe675704a9b29efbe372f0a1, type: 3}
+  movementFactor: 1
   raycastDistance: 1
   edgeLayer:
     serializedVersion: 2

@@ -177,6 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 528715908648739534}
   - component: {fileID: 528715908648739535}
+  - component: {fileID: 2010604456}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -235,6 +236,42 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: Footstep 1
+    clip: {fileID: 8300000, guid: 6c797de8ab4c9844290221a551621bdc, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Footstep 2
+    clip: {fileID: 8300000, guid: 81ab24aefd8309844995ca9cc2a41e92, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Footstep 3
+    clip: {fileID: 8300000, guid: 528066ebf72ea394d85d717165894b66, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Pickup
+    clip: {fileID: 8300000, guid: b03671e5f42ee764192de65b22b1908b, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+--- !u!114 &2010604456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528715908648739533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ead09e0ddbed04093bcd910e81d5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &528715909225034003
 GameObject:
   m_ObjectHideFlags: 0
