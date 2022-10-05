@@ -6879,7 +6879,7 @@ PrefabInstance:
       objectReference: {fileID: 1749640189}
     - target: {fileID: 1257477865, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 186.3484
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 531899279206991587, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7011,7 +7011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 531899279457046296, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 531899280071992718, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7035,7 +7035,7 @@ PrefabInstance:
       objectReference: {fileID: 1099442394}
     - target: {fileID: 531899281196446477, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 76.1763
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
@@ -14880,6 +14880,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 528715908648739535, guid: c738c426a27fd914a8b16e439b6a9421, type: 3}
+      propertyPath: sounds.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 528715908648739535, guid: c738c426a27fd914a8b16e439b6a9421, type: 3}
+      propertyPath: sounds.Array.data[8].name
+      value: HungerLoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 528715908648739535, guid: c738c426a27fd914a8b16e439b6a9421, type: 3}
+      propertyPath: sounds.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ab824113ab10914eb4a78912320dd94, type: 3}
+    - target: {fileID: 528715908648739535, guid: c738c426a27fd914a8b16e439b6a9421, type: 3}
+      propertyPath: sounds.Array.data[9].name
+      value: Hurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 528715908648739535, guid: c738c426a27fd914a8b16e439b6a9421, type: 3}
+      propertyPath: sounds.Array.data[9].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528715908648739535, guid: c738c426a27fd914a8b16e439b6a9421, type: 3}
+      propertyPath: sounds.Array.data[9].volume
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 528715909225034003, guid: c738c426a27fd914a8b16e439b6a9421, type: 3}
       propertyPath: m_Name
       value: Audio

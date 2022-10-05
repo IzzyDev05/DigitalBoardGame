@@ -69,6 +69,7 @@ namespace OTU.Items {
                 resultText.text = "+1 " + itemType.itemName;
             }
             else {
+                audioManager.Play("HungerLoss");
                 gameManager.ReduceTurns(loseTurns);
                 resultText.text = "-" + loseTurns + " HP";
             }
