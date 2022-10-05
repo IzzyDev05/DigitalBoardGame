@@ -1,5 +1,6 @@
 using UnityEngine;
 using OTU.Managers;
+using OTU.Core;
 
 namespace OTU.UI {
     public class PlayerUsernames : MonoBehaviour
@@ -13,6 +14,8 @@ namespace OTU.UI {
 
         private void Start() {
             players = FindObjectsOfType<PlayerHandler>();
+
+            GameManager.IsMenuOpen = true;
         }
 
         public void SetPlayerName1(string name) {

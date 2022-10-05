@@ -3,6 +3,7 @@ using TMPro;
 using OTU.Core;
 using OTU.Managers;
 using OTU.Inventory;
+using OTU.Movement;
 using OTU.UI;
 
 namespace OTU.Items {
@@ -22,15 +23,27 @@ namespace OTU.Items {
 
         private GameManager gameManager;
         private PlayerHandler playerHandler;
+        private ShakeCamera camShake;
 
         private AudioManager audioManager;
 
         private void Start() {
             audioManager = FindObjectOfType<AudioManager>();
             gameManager = FindObjectOfType<GameManager>();
+            camShake = FindObjectOfType<ShakeCamera>();
             
             searchPromptMenu.SetActive(false);
             resultText.text = "";
+        }
+
+        private void Update() {
+            if (!playerHandler) return;
+
+            if (Input.GetKeyDown(KeyCode.E) && playerHandler.GetComponent<PlayerMovement>().enabled) {
+                GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
+                searchPromptMenu.SetActive(GameManager.IsMenuOpen);
+                searchPromptText.SetActive(false);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
@@ -38,32 +51,36 @@ namespace OTU.Items {
             rewardAmount.text = itemType.itemName;
             chanceAmount.text = chanceOfGettingItems.ToString();
 
-            if (other.CompareTag("Player")) {
+            if (other.GetComponent<PlayerMovement>().enabled) {
                 searchPromptText.SetActive(true);
                 playerHandler = other.GetComponent<PlayerHandler>();
             }
+            else {
+                playerHandler = null;
+            }
         }
 
-        private void Update() {
-            if (playerHandler != null) {
-                if (Input.GetKeyDown(KeyCode.E)) {
-                    searchPromptMenu.SetActive(true);
-                    searchPromptText.SetActive(false);
-                }
-            }
+        private void OnTriggerStay(Collider other) {
+            if (!other.GetComponent<PlayerMovement>().enabled)
+                playerHandler = null;
+            else
+                playerHandler = other.GetComponent<PlayerHandler>();
         }
 
         private void OnTriggerExit2D(Collider2D other) {
             playerHandler = null;
+            GameManager.IsMenuOpen = false;
             searchPromptMenu.SetActive(false);
             searchPromptText.SetActive(false);
             resultText.text = "";
         }
 
         public void RandomizeItemChance() {
+            if (!playerHandler) return;
+            
             int chanceRolled = Random.Range(0, 100);
-            FindObjectOfType<ShakeCamera>().Shake();
-
+            camShake.Shake();
+            
             if (chanceRolled < chanceOfGettingItems) {
                 GiveItems();
                 resultText.text = "+1 " + itemType.itemName;
@@ -76,6 +93,7 @@ namespace OTU.Items {
         }
 
         public void Back() {
+            GameManager.IsMenuOpen = false;
             searchPromptMenu.SetActive(false);
             searchPromptText.SetActive(false);
             resultText.text = "";

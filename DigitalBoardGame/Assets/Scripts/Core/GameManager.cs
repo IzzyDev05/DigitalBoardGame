@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using OTU.Managers;
 
 namespace OTU.Core {
     public class GameManager : MonoBehaviour
@@ -9,6 +10,7 @@ namespace OTU.Core {
         [HideInInspector] public static bool IsMenuOpen = false;
 
         [SerializeField] private int maxTurnsAllowed = 30;
+        [SerializeField] private GameObject chromaticAbberation;
 
         [Header("UI")]
         [SerializeField] private GameObject preGameUI;
@@ -28,8 +30,17 @@ namespace OTU.Core {
         }
 
         private void Update() {
-            if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R)) {
+            if (Input.GetKeyDown(KeyCode.Tilde)) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
+            if (IsMenuOpen) {
+                chromaticAbberation.SetActive(true);
+                GetComponent<SwitchPlayers>().enabled = false;
+            }
+            else {
+                chromaticAbberation.SetActive(false);
+                GetComponent<SwitchPlayers>().enabled = true;
             }
         }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using OTU.Core;
 
 namespace OTU.Managers {
     public class InitializePlayers : MonoBehaviour {
@@ -22,6 +23,8 @@ namespace OTU.Managers {
 
         public void StartGame() {
             FindObjectOfType<AudioManager>().Play("Click");
+            GameManager.IsMenuOpen = false;
+            
             foreach (PlayerHandler player in players) {
                 player.GetComponent<SpriteRenderer>().enabled = true;
             }

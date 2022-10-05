@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93e03a4777b08d4f9551c9c209fe5e1, type: 3}
+  m_Name: 6 - Hint
+  m_EditorClassIdentifier: 
+  dialogueText: The landmark known as "Nutella Island" should provide you with rubber,
+    and the forest should give you wood.
+  dialougeNumber: 5
+  isFinalDialogue: 0

@@ -4,6 +4,7 @@ using TMPro;
 using OTU.Core;
 using OTU.Managers;
 using OTU.Inventory;
+using OTU.Movement;
 
 namespace OTU.Items {
     public class SubmitItems : MonoBehaviour
@@ -48,9 +49,9 @@ namespace OTU.Items {
         }
 
         private void Update() {
-            if (!isInVicinity) return;
+            if (!isInVicinity || player == null) return;
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<PlayerMovement>().enabled)
             {
                 GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
                 submitPrompt.SetActive(false);
@@ -94,11 +95,19 @@ namespace OTU.Items {
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
-            if (!other.CompareTag("Player")) return;
+            if (!other.GetComponent<PlayerMovement>().enabled) return;
+
             isInVicinity = true;
             player = other.GetComponent<PlayerHandler>();
 
             submitPrompt.SetActive(true);
+        }
+
+        private void OnTriggerStay2D(Collider2D other) {
+            if (!other.GetComponent<PlayerMovement>().enabled) 
+                player = null;
+            else 
+                player = other.GetComponent<PlayerHandler>();
         }
 
         private void OnTriggerExit2D(Collider2D other) {
