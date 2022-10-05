@@ -2333,6 +2333,10 @@ PrefabInstance:
       propertyPath: interfaces.Array.data[2]
       value: 
       objectReference: {fileID: 973923950}
+    - target: {fileID: 2278859729765111, guid: 0d0c5b690c74e5b4c9241b2130755648, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d0c5b690c74e5b4c9241b2130755648, type: 3}
 --- !u!114 &290809542 stripped
@@ -6875,7 +6879,7 @@ PrefabInstance:
       objectReference: {fileID: 1749640189}
     - target: {fileID: 1257477865, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 186.3484
       objectReference: {fileID: 0}
     - target: {fileID: 531899279206991587, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7005,6 +7009,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 531899279457046296, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 531899280071992718, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -7027,7 +7035,7 @@ PrefabInstance:
       objectReference: {fileID: 1099442394}
     - target: {fileID: 531899281196446477, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 76.1763
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1157eada4f72ceb44ae1f74fecc6b67b, type: 3}

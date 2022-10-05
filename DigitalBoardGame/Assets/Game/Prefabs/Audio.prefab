@@ -256,7 +256,13 @@ MonoBehaviour:
     loop: 0
   - name: Pickup
     clip: {fileID: 8300000, guid: b03671e5f42ee764192de65b22b1908b, type: 3}
-    volume: 0.5
+    volume: 0.75
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 5ab824113ab10914eb4a78912320dd94, type: 3}
+    volume: 0.75
     pitch: 1
     source: {fileID: 0}
     loop: 0
