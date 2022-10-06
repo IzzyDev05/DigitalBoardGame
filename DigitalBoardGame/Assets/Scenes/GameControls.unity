@@ -842,7 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.09019607, g: 0.5259889, b: 0.7647059, a: 0.7058824}
+  m_Color: {r: 0.09019607, g: 0.5259889, b: 0.7647059, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1192,20 +1192,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '> Players choose their play order themselves and enter usernames accordingly.
+  m_text: '> The die can be rolled either by pressing the dice icon or the pressing
+    the spacebar.
 
-    >
-    Players must roll the die and move the spaces assigned. Once they run out of
-    moves, the next player takes their turn.
+    > Players can move using WASD keys as long as they have moves
+    left.
 
-    > Players must collect the items
-    [Which can be checked from the boat drop menu] from around the island.
+    > After a player''s turn over, the next player should click on their
+    character (Left mouse click) on screen and roll their turn.
 
-    >
-    Moving and search for items removes hunger points.
+    > Players can
+    open their inventories using the TAB key.
 
-    > You can use the tilde
-    (~) key to restart the level at any point.'
+    > The game can be restarted by
+    pressing the BACKSLASH [\] key'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d403a10f477391499f674e6b9bdc973, type: 2}
   m_sharedMaterial: {fileID: -884062984904020287, guid: 2d403a10f477391499f674e6b9bdc973, type: 2}
@@ -1268,7 +1268,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -63.628845}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
