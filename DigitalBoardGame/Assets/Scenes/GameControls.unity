@@ -403,7 +403,6 @@ GameObject:
   - component: {fileID: 391358014}
   - component: {fileID: 391358013}
   - component: {fileID: 391358012}
-  - component: {fileID: 391358011}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -411,18 +410,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &391358011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391358010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bef957986b59ab47993574017fc3064, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &391358012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +490,7 @@ RectTransform:
   - {fileID: 293525497}
   - {fileID: 394602716}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -593,7 +580,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 391358011}
+      - m_Target: {fileID: 855426971}
         m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
@@ -707,7 +694,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &635376126
 GameObject:
@@ -790,7 +777,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &660110631
 GameObject:
@@ -867,6 +854,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660110631}
   m_CullTransparentMesh: 1
+--- !u!1001 &855426970
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 400.09192
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 299.836
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -298.29453
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938270, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752382077426938271, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+--- !u!114 &855426971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2752382077426938269, guid: 21fbb9d08c234194b9bf3c687b3a9bd6, type: 3}
+  m_PrefabInstance: {fileID: 855426970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bef957986b59ab47993574017fc3064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1532224540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1202,7 @@ GameObject:
   - component: {fileID: 1684050112}
   - component: {fileID: 1684050111}
   m_Layer: 5
-  m_Name: Rules
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1198,14 +1253,14 @@ MonoBehaviour:
     > Players can move using WASD keys as long as they have moves
     left.
 
-    > After a player''s turn over, the next player should click on their
-    character (Left mouse click) on screen and roll their turn.
+    > After a player''s turn is over, the next player should click on
+    their character (Left mouse click) on screen and roll their turn.
 
-    > Players can
-    open their inventories using the TAB key.
+    > Players
+    can open their inventories using the TAB key.
 
-    > The game can be restarted by
-    pressing the BACKSLASH [\] key'
+    > The game can be restarted
+    by pressing the BACKSLASH [\] key'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d403a10f477391499f674e6b9bdc973, type: 2}
   m_sharedMaterial: {fileID: -884062984904020287, guid: 2d403a10f477391499f674e6b9bdc973, type: 2}

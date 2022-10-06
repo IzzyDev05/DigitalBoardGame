@@ -6,8 +6,10 @@ using OTU.Managers;
 using OTU.Inventory;
 
 namespace OTU.UI {
-    public class Inventory : MonoBehaviour
+    public class InventoryUI : MonoBehaviour
     {
+        public static bool CanShowInventory = true;
+
         [SerializeField] private GameObject inventoryPanel;
         [SerializeField] private PlayerHandler[] players;
         [SerializeField] private TextMeshProUGUI[] playerNames;
@@ -42,7 +44,7 @@ namespace OTU.UI {
         private void Update() {
             SetPlayerNames();
 
-            if (Input.GetKeyDown(KeyCode.Tab)) {
+            if (Input.GetKeyDown(KeyCode.Tab) && CanShowInventory) {
                 showInventory = !showInventory;
                 GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
 

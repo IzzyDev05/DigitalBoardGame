@@ -5,6 +5,7 @@ using OTU.Core;
 using OTU.Managers;
 using OTU.Inventory;
 using OTU.Movement;
+using OTU.UI;
 
 namespace OTU.Items {
     public class SubmitItems : MonoBehaviour
@@ -22,6 +23,7 @@ namespace OTU.Items {
 
         private PlayerHandler player;
         private GameManager gameManager;
+        private GameObject[] interfaces;
         private List<ItemsSO> items;
 
         private int itemsSubmitted = 0;
@@ -34,12 +36,14 @@ namespace OTU.Items {
         private int woodSubmitted;
         private int rubberSubmitted;
         private bool isInVicinity = false;
+        private bool showMenu = false;
 
         private AudioManager audioManager;
 
         private void Start() {
             audioManager = FindObjectOfType<AudioManager>();
             gameManager = FindObjectOfType<GameManager>();
+            interfaces = gameManager.interfaces;
             DisableUI();
 
             itemsReq[0].text = screwsRequired.ToString();
@@ -54,10 +58,18 @@ namespace OTU.Items {
             if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<PlayerMovement>().enabled)
             {
                 GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
+                showMenu = !showMenu;
                 submitPrompt.SetActive(false);
+                InventoryUI.CanShowInventory = false;
+
+                foreach (GameObject obj in interfaces) {
+                    if (obj != this.gameObject) {
+                        obj.SetActive(false);
+                    }
+                }
             }
 
-            submitMenu.SetActive(GameManager.IsMenuOpen);
+            submitMenu.SetActive(showMenu);
 
             itemsSubmittedAmount[0].text = screwsSubmitted.ToString();
             itemsSubmittedAmount[1].text = fuelSubmitted.ToString();
@@ -90,7 +102,8 @@ namespace OTU.Items {
 
         public void Back() {
             audioManager.Play("Click");
-            GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
+            GameManager.IsMenuOpen = false;
+            showMenu = false;
             DisableUI();
         }
 
@@ -119,6 +132,7 @@ namespace OTU.Items {
         private void DisableUI() {
             submitPrompt.SetActive(false);
             submitMenu.SetActive(false);
+            InventoryUI.CanShowInventory = true;
         }
     }
 }

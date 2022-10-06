@@ -19,8 +19,10 @@ namespace OTU.Core {
         [SerializeField] private GameObject gameLostScreen;
 
         private int turnsRolled;
+        private float playedTime;
 
         private void Start() {
+            playedTime = 0f;
             HasGameEnded = false;
             IsMenuOpen = false;
 
@@ -30,6 +32,8 @@ namespace OTU.Core {
         }
 
         private void Update() {
+            playedTime += Time.deltaTime;
+
             if (Input.GetKeyDown(KeyCode.Backslash)) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
@@ -77,6 +81,10 @@ namespace OTU.Core {
 
         public int GetTurnsRolled() {
             return turnsRolled;
+        }
+
+        public float GetPlayedTime() {
+            return playedTime;
         }
     }
 }

@@ -41,6 +41,7 @@ namespace OTU.Items {
 
             if (Input.GetKeyDown(KeyCode.E) && playerHandler.GetComponent<PlayerMovement>().enabled) {
                 GameManager.IsMenuOpen = !GameManager.IsMenuOpen;
+                InventoryUI.CanShowInventory = !InventoryUI.CanShowInventory;
                 searchPromptMenu.SetActive(GameManager.IsMenuOpen);
                 searchPromptText.SetActive(false);
             }
@@ -63,7 +64,7 @@ namespace OTU.Items {
         private void OnTriggerStay(Collider other) {
             if (!other.GetComponent<PlayerMovement>().enabled)
                 playerHandler = null;
-            else
+            else 
                 playerHandler = other.GetComponent<PlayerHandler>();
         }
 
@@ -72,6 +73,7 @@ namespace OTU.Items {
             GameManager.IsMenuOpen = false;
             searchPromptMenu.SetActive(false);
             searchPromptText.SetActive(false);
+            InventoryUI.CanShowInventory = true;
             resultText.text = "";
         }
 

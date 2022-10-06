@@ -1,18 +1,26 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuNavigation : MonoBehaviour
 {
-    public void StartGame() {
-        SceneManager.LoadScene(1);
+    [SerializeField] private float transitionTime = 1f;
+    private Animator animator;
+
+    private void Start() {
+        animator = GetComponentInChildren<Animator>();
     }
 
-    public void Rules() {
-        SceneManager.LoadScene(2);
+    public void StartGame() {
+        StartCoroutine(LoadLevel(1));
+    }
+
+    public void Controls() {
+        StartCoroutine(LoadLevel(2));
     }
 
     public void Credits() {
-        SceneManager.LoadScene(3);
+        StartCoroutine(LoadLevel(3));
     }
 
     public void Quit() {
@@ -20,6 +28,12 @@ public class MenuNavigation : MonoBehaviour
     }
 
     public void MainMenu() {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadLevel(0));
+    }
+
+    private IEnumerator LoadLevel(int levelIndex) {
+        animator.SetTrigger("start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(levelIndex);
     }
 }
