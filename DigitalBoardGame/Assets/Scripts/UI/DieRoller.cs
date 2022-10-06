@@ -20,6 +20,12 @@ namespace OTU.UI {
             players = FindObjectsOfType<PlayerMovement>();
         }
 
+        private void Update() {
+            if (Input.GetKeyDown(KeyCode.Space) && !GameManager.IsMenuOpen) {
+                RollDie();
+            }
+        }
+
         public void RollDie() {
             audioManager.Play("Dice Sound");
             audioManager.Play("Click");

@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 198031552}
   - component: {fileID: 198031551}
   m_Layer: 5
-  m_Name: Rules
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1265,7 +1265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rules
+  m_text: Controls
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d403a10f477391499f674e6b9bdc973, type: 2}
   m_sharedMaterial: {fileID: -884062984904020287, guid: 2d403a10f477391499f674e6b9bdc973, type: 2}
@@ -1462,7 +1462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bef957986b59ab47993574017fc3064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theme: {fileID: 3357698442688757759}
 --- !u!1 &1690428276
 GameObject:
   m_ObjectHideFlags: 0

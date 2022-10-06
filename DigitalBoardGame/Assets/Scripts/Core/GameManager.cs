@@ -30,7 +30,7 @@ namespace OTU.Core {
         }
 
         private void Update() {
-            if (Input.GetKeyDown(KeyCode.Tilde)) {
+            if (Input.GetKeyDown(KeyCode.Backslash)) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
 
