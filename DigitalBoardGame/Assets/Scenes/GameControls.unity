@@ -1247,7 +1247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '> The die can be rolled either by pressing the dice icon or the pressing
+  m_text: '> The die can be rolled either by pressing the dice icon or by pressing
     the spacebar.
 
     > Players can move using WASD keys as long as they have moves
